@@ -974,6 +974,130 @@ body {
     }
 }
 
+/* Mobile Profile Section - Business Card Style */
+.mobile-profile-section {
+    display: none;
+    padding: var(--space-6) 0;
+    margin-top: var(--space-6);
+}
+
+.mobile-profile-card {
+    background: var(--surface-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--border-color-subtle);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-large);
+    position: relative;
+    overflow: hidden;
+}
+
+.mobile-profile-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--gradient-primary);
+}
+
+.mobile-profile-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-5);
+    margin-bottom: var(--space-6);
+}
+
+.mobile-profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+    box-shadow: var(--shadow-medium);
+    border: 2px solid var(--color-primary);
+}
+
+.mobile-profile-avatar::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    z-index: -1;
+}
+
+.mobile-profile-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.mobile-profile-name {
+    font-size: var(--text-xl);
+    font-weight: var(--weight-bold);
+    margin-bottom: var(--space-1);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.mobile-profile-title {
+    font-size: var(--text-base);
+    color: var(--text-color-secondary);
+    font-weight: var(--weight-medium);
+    line-height: 1.3;
+}
+
+.mobile-profile-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-5);
+    justify-content: space-between;
+}
+
+.mobile-profile-tags .tag {
+    background: var(--surface-secondary);
+    border: 1px solid var(--border-color-subtle);
+    font-size: var(--text-xs);
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-md);
+}
+
+.mobile-social-links {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-2);
+}
+
+.mobile-social-links .social-link {
+    width: 40px;
+    height: 40px;
+    background: var(--surface-secondary);
+    border: 1px solid var(--border-color-subtle);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color-secondary);
+    text-decoration: none;
+    transition: var(--transition-normal);
+    font-size: var(--text-base);
+    flex-shrink: 0;
+}
+
+.mobile-social-links .social-link:hover {
+    background: var(--color-primary);
+    color: var(--surface-primary);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-medium);
+    border-color: var(--color-primary);
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .app {
@@ -999,6 +1123,10 @@ body {
     
     .mobile-nav {
         display: flex;
+    }
+    
+    .mobile-profile-section {
+        display: block;
     }
     
     .main-content {
