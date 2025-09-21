@@ -2,7 +2,7 @@
 
 A modern, accessible, and responsive personal portfolio website showcasing my skills, projects, and experience as an AI Engineer and XR Developer.
 
-![Portfolio Preview](https://via.placeholder.com/800x400?text=Portfolio+Preview)
+![Portfolio Preview](./static/PortfolioPreview.png)
 
 ## 🚀 Features
 
