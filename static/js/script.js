@@ -88,23 +88,6 @@ class Portfolio {
         }
     }
 
-    showSection(sectionId) {
-        // Hide current section
-        const currentSectionEl = document.getElementById(this.currentSection);
-        if (currentSectionEl) {
-            currentSectionEl.classList.remove('active');
-        }
-
-        // Show new section
-        const newSectionEl = document.getElementById(sectionId);
-        if (newSectionEl) {
-            newSectionEl.classList.add('active');
-            // Scroll to top of content
-            document.querySelector('.main-content').scrollTop = 0;
-        }
-
-        this.currentSection = sectionId;
-    }
 
     updateActiveNavLink(activeLink) {
         // Remove active state from all nav links
@@ -403,8 +386,9 @@ class Portfolio {
         const newSectionEl = document.getElementById(sectionId);
         if (newSectionEl) {
             newSectionEl.classList.add('active');
-            // Scroll to top of content
-            document.querySelector('.main-content').scrollTop = 0;
+            
+            // Scroll to top of entire page - multiple methods for better compatibility
+            this.scrollToTop();
             
             // Trigger animations for About section when switching to it
             if (sectionId === 'about') {
@@ -415,6 +399,28 @@ class Portfolio {
         }
 
         this.currentSection = sectionId;
+    }
+
+    // Comprehensive scroll to top method
+    scrollToTop() {
+        // Scroll the main content container
+        const mainContent = document.querySelector('.main-content');
+        if (mainContent) {
+            mainContent.scrollTop = 0;
+        }
+        
+        // Scroll the entire window/document
+        window.scrollTo(0, 0);
+        
+        // Alternative methods for better browser compatibility
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        
+        // Smooth scroll option (you can uncomment this if you prefer smooth scrolling)
+        // window.scrollTo({
+        //     top: 0,
+        //     behavior: 'smooth'
+        // });
     }
 
     triggerAboutAnimations() {
