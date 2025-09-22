@@ -16,6 +16,7 @@ class Portfolio {
         this.handleInitialHash();
         this.preloadImages();
         this.setupSkillsToggle();
+        this.setupAboutAnimations();
     }
 
     setupEventListeners() {
@@ -199,7 +200,7 @@ class Portfolio {
 
         // Observe cards and timeline items
         const animateElements = document.querySelectorAll(
-            '.card, .skill-card, .project-card, .timeline-item'
+            '.card, .skill-card, .project-card, .timeline-item, .hero-intro-card, .language-item, .strength-item'
         );
         
         animateElements.forEach(el => {
@@ -305,6 +306,127 @@ class Portfolio {
             });
         });
     }
+
+    setupAboutAnimations() {
+        // Setup language progress bars
+        this.setupLanguageProgress();
+        
+        // Setup enhanced intersection observer for about section
+        this.setupAboutIntersectionObserver();
+    }
+
+
+    setupLanguageProgress() {
+        const progressBars = document.querySelectorAll('.progress-bar');
+        
+        progressBars.forEach(bar => {
+            const level = parseInt(bar.getAttribute('data-level'));
+            bar.dataset.animated = 'false';
+            
+            // Store animation function for later use
+            bar.animateProgress = () => {
+                if (bar.dataset.animated === 'true') return;
+                
+                bar.dataset.animated = 'true';
+                
+                // Delay the animation slightly for staggered effect
+                const delay = Array.from(progressBars).indexOf(bar) * 200;
+                
+                setTimeout(() => {
+                    bar.style.width = level + '%';
+                }, delay);
+            };
+        });
+    }
+
+    setupAboutIntersectionObserver() {
+        const aboutObserverOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const aboutObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Animate language progress bars
+                    if (entry.target.classList.contains('languages-card')) {
+                        const progressBars = entry.target.querySelectorAll('.progress-bar');
+                        progressBars.forEach(bar => {
+                            if (bar.animateProgress) {
+                                bar.animateProgress();
+                            }
+                        });
+                    }
+                    
+                    // Add stagger animation for strength items
+                    if (entry.target.classList.contains('strength-card')) {
+                        const strengthItems = entry.target.querySelectorAll('.strength-item');
+                        strengthItems.forEach((item, index) => {
+                            setTimeout(() => {
+                                item.classList.add('animate-in');
+                            }, index * 100);
+                        });
+                    }
+                    
+                    // Add stagger animation for interest tags
+                    if (entry.target.classList.contains('interests-card')) {
+                        const interestTags = entry.target.querySelectorAll('.interest-tag');
+                        interestTags.forEach((tag, index) => {
+                            setTimeout(() => {
+                                tag.classList.add('animate-in');
+                            }, index * 50);
+                        });
+                    }
+                }
+            });
+        }, aboutObserverOptions);
+
+        // Observe about section specific elements
+        const aboutElements = document.querySelectorAll(
+            '.languages-card, .strength-card, .interests-card'
+        );
+        
+        aboutElements.forEach(el => {
+            aboutObserver.observe(el);
+        });
+    }
+
+    // Enhanced method to handle section switching with animations
+    showSection(sectionId) {
+        // Hide current section
+        const currentSectionEl = document.getElementById(this.currentSection);
+        if (currentSectionEl) {
+            currentSectionEl.classList.remove('active');
+        }
+
+        // Show new section
+        const newSectionEl = document.getElementById(sectionId);
+        if (newSectionEl) {
+            newSectionEl.classList.add('active');
+            // Scroll to top of content
+            document.querySelector('.main-content').scrollTop = 0;
+            
+            // Trigger animations for About section when switching to it
+            if (sectionId === 'about') {
+                setTimeout(() => {
+                    this.triggerAboutAnimations();
+                }, 300); // Small delay to ensure section is visible
+            }
+        }
+
+        this.currentSection = sectionId;
+    }
+
+    triggerAboutAnimations() {
+        // Force trigger animations if user navigates directly to about section
+        const progressBars = document.querySelectorAll('.progress-bar');
+        
+        progressBars.forEach(bar => {
+            if (bar.animateProgress && bar.dataset.animated === 'false') {
+                bar.animateProgress();
+            }
+        });
+    }
 }
 
 // Initialize portfolio when DOM is loaded
@@ -315,7 +437,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Add CSS for animations
 const style = document.createElement('style');
 style.textContent = `
-    .card, .skill-card, .project-card, .timeline-item {
+    .card, .skill-card, .project-card, .timeline-item, .hero-intro-card, .language-item, .strength-item, .interest-tag {
         opacity: 0;
         transform: translateY(20px);
         transition: opacity 0.6s ease, transform 0.6s ease;
@@ -336,10 +458,30 @@ style.textContent = `
         outline-offset: 2px;
     }
     
+    /* Initial state for progress bars */
+    .progress-bar {
+        width: 0 !important;
+    }
+    
+    /* Stagger animations for strength items */
+    .strength-item {
+        transition-delay: calc(var(--index, 0) * 0.1s);
+    }
+    
+    /* Stagger animations for interest tags */
+    .interest-tag {
+        transition-delay: calc(var(--index, 0) * 0.05s);
+    }
+    
     @media (prefers-reduced-motion: reduce) {
-        .card, .skill-card, .project-card, .timeline-item {
+        .card, .skill-card, .project-card, .timeline-item, .hero-intro-card, .language-item, .strength-item, .interest-tag {
             opacity: 1;
             transform: none;
+            transition: none;
+        }
+        
+        .progress-bar {
+            width: var(--target-width, 0%) !important;
             transition: none;
         }
     }
