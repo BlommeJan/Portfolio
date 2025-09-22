@@ -623,92 +623,143 @@
                 <!-- Projects Section -->
                 <section id="projects" class="section" aria-labelledby="projects-title">
                     <header class="section-header">
-                        <h2 class="section-title" id="projects-title">Key Projects</h2>
+                        <h2 class="section-title" id="projects-title">Project Showcase</h2>
                         <p class="section-subtitle">
                             Bridging the digital and physical worlds through innovative hardware and software solutions.
                         </p>
                     </header>
                     
-                    <div class="projects-grid">
-                        <article class="project-card" tabindex="0">
-                            <h3 class="project-title">OrbitalPlay Controller (2025)</h3>
-                            <p class="project-description">
-                                An open-source XR hardware controller using omnidirectional ball-on-bearing tracking, 
-                                powered by a Seeed XIAO RP2040. Features C++ firmware, paddle input + game logic in JS + Canvas. 
-                                Fully documented with CAD files, firmware, BOM on GitHub. Designed for tactile realism and immersive demos.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">C++</span>
-                                <span class="project-tag">JavaScript</span>
-                                <span class="project-tag">Canvas</span>
-                                <span class="project-tag">Hardware</span>
-                                <span class="project-tag">XR</span>
+                    <div class="projects-workspace">
+                        <!-- Active Development -->
+                        <div class="project-section">
+                            <div class="section-divider">
+                                <div class="section-label">Active Development</div>
+                                <div class="status-dot active"></div>
                             </div>
-                        </article>
+                            
+                            <div class="projects-board">
+                                <div class="project-tile">
+                                    <div class="tile-header">
+                                        <span class="project-meta">2025</span>
+                                        <span class="status-indicator active">In Progress</span>
+                                    </div>
+                                    
+                                    <div class="project-info">
+                                        <h3 class="project-name">Relivem</h3>
+                                        <p class="project-summary">
+                                            A nostalgia-driven photo journaling app built with Flutter and Firebase. Designed for private use with timeline, daily prompts, tagging, and exportable metadata. Timeline and interface evoke warmth and memory with a custom design language.
+                                        </p>
+                                        
+                                        <div class="tech-grid">
+                                            <span class="tech-tag lead">Flutter</span>
+                                            <span class="tech-tag">Dart</span>
+                                            <span class="tech-tag">Firebase</span>
+                                            <span class="tech-tag">SQLite</span>
+                                            <span class="tech-tag">Mobile</span>
+                                            <span class="tech-tag">UX</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-tile">
+                                    <div class="tile-header">
+                                        <span class="project-meta">2025</span>
+                                        <span class="status-indicator ongoing">Ongoing</span>
+                                    </div>
+                                    
+                                    <div class="project-info">
+                                        <h3 class="project-name">Student Tools Suite</h3>
+                                        <p class="project-summary">
+                                            A fully offline-first productivity platform built in modular HTML/CSS/JS. Includes Flashcards, Infinite Whiteboard, Pomodoro Timer, Markdown Notes, and more. Unified theming and consistent UX across tools.
+                                        </p>
+                                        
+                                        <div class="tech-grid">
+                                            <span class="tech-tag lead">JavaScript</span>
+                                            <span class="tech-tag">HTML/CSS</span>
+                                            <span class="tech-tag">Tailwind</span>
+                                            <span class="tech-tag">IndexedDB</span>
+                                            <span class="tech-tag">Offline-First</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         
-                        <article class="project-card" tabindex="0">
-                            <h3 class="project-title">Smart Cocktail Shaker (2024)</h3>
-                            <p class="project-description">
-                                An IoT drink mixer with a custom Raspberry Pi touchscreen UI. Features motor-controlled liquid dispensing 
-                                and Python GPIO logic. Designed for demo usability, with physical buttons, screen UI, and automation. 
-                                Combines hardware engineering with intuitive software design.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span>
-                                <span class="project-tag">Raspberry Pi</span>
-                                <span class="project-tag">GPIO</span>
-                                <span class="project-tag">IoT</span>
-                                <span class="project-tag">Hardware</span>
+                        <!-- Completed Portfolio -->
+                        <div class="project-section">
+                            <div class="section-divider">
+                                <div class="section-label">Completed Portfolio</div>
+                                <div class="status-dot completed"></div>
                             </div>
-                        </article>
-                        
-                        <article class="project-card" tabindex="0">
-                            <h3 class="project-title">NMBS PowerApp (2023)</h3>
-                            <p class="project-description">
-                                Hackathon runner-up: onboarding app for the Belgian rail company. Built in Microsoft PowerApps with 
-                                mobile-first, accessibility-first approach. Optimized for internal enterprise use with focus on user 
-                                experience and efficient workflow integration.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">PowerApps</span>
-                                <span class="project-tag">Mobile-First</span>
-                                <span class="project-tag">Accessibility</span>
-                                <span class="project-tag">Enterprise</span>
-                                <span class="project-tag">UX</span>
+                            
+                            <div class="projects-board">
+                                <div class="project-tile">
+                                    <div class="tile-header">
+                                        <span class="project-meta">2025</span>
+                                        <span class="status-indicator completed">Shipped</span>
+                                    </div>
+                                    
+                                    <div class="project-info">
+                                        <h3 class="project-name">OrbitalPlay Controller</h3>
+                                        <p class="project-summary">
+                                            An open-source XR hardware controller using omnidirectional ball-on-bearing tracking, powered by a Seeed XIAO RP2040. Features C++ firmware, paddle input, and immersive JS-based demos. Fully documented with CAD, firmware, and BOM on GitHub.
+                                        </p>
+                                        
+                                        <div class="tech-grid">
+                                            <span class="tech-tag lead">C++</span>
+                                            <span class="tech-tag">JavaScript</span>
+                                            <span class="tech-tag">Canvas</span>
+                                            <span class="tech-tag">Hardware</span>
+                                            <span class="tech-tag">XR</span>
+                                            <span class="tech-tag">Open Source</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-tile">
+                                    <div class="tile-header">
+                                        <span class="project-meta">2024</span>
+                                        <span class="status-indicator prototype">Prototype</span>
+                                    </div>
+                                    
+                                    <div class="project-info">
+                                        <h3 class="project-name">Smart Cocktail Shaker</h3>
+                                        <p class="project-summary">
+                                            A proof-of-concept IoT drink dispenser with Raspberry Pi UI and Python-controlled GPIO motors. Includes touchscreen interface, physical controls, and preset recipes. Designed for demo purposes and rapid iteration.
+                                        </p>
+                                        
+                                        <div class="tech-grid">
+                                            <span class="tech-tag lead">Python</span>
+                                            <span class="tech-tag">Raspberry Pi</span>
+                                            <span class="tech-tag">IoT</span>
+                                            <span class="tech-tag">Hardware</span>
+                                            <span class="tech-tag">GPIO</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-tile">
+                                    <div class="tile-header">
+                                        <span class="project-meta">2023</span>
+                                        <span class="status-indicator completed">Shipped</span>
+                                    </div>
+                                    
+                                    <div class="project-info">
+                                        <h3 class="project-name">NMBS PowerApp</h3>
+                                        <p class="project-summary">
+                                            Runner-up at hackathon for Belgian Railways. Created an onboarding app using Microsoft PowerApps. Emphasized mobile-first UX, accessibility, and internal workflow optimization for enterprise environments.
+                                        </p>
+                                        
+                                        <div class="tech-grid">
+                                            <span class="tech-tag lead">PowerApps</span>
+                                            <span class="tech-tag">Enterprise</span>
+                                            <span class="tech-tag">Accessibility</span>
+                                            <span class="tech-tag">Hackathon</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </article>
-                        
-                        <article class="project-card" tabindex="0">
-                            <h3 class="project-title">Student Tools Suite (Ongoing)</h3>
-                            <p class="project-description">
-                                A fully local, offline-first productivity toolkit for students. Built in HTML/CSS/JS with Tailwind and IndexedDB. 
-                                Includes Flashcard app, Infinite Whiteboard, Pomodoro Timer, Note-taking with Markdown, Quiz Generator (CSV input), 
-                                and more. Unified design system and storage logic. No accounts, no cloud dependencies, just performance and privacy.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">HTML/CSS/JS</span>
-                                <span class="project-tag">Tailwind</span>
-                                <span class="project-tag">IndexedDB</span>
-                                <span class="project-tag">Offline-First</span>
-                                <span class="project-tag">Privacy</span>
-                            </div>
-                        </article>
-                        
-                        <article class="project-card" tabindex="0">
-                            <h3 class="project-title">Relivem App (In Progress)</h3>
-                            <p class="project-description">
-                                A nostalgic daily photo archive app that turns memories into timelines. Features Duolingo-style vertical scroll layout, 
-                                SQLite local storage with export metadata (title, location, people, date, logo), and Firebase for login and syncing. 
-                                Built in Dart + Flutter with tagging, exporting, and smart search. Designed for private archiving, not social media.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Dart</span>
-                                <span class="project-tag">Flutter</span>
-                                <span class="project-tag">SQLite</span>
-                                <span class="project-tag">Firebase</span>
-                                <span class="project-tag">Mobile</span>
-                            </div>
-                        </article>
+                        </div>
                     </div>
                 </section>
                 
