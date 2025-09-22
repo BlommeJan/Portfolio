@@ -79,8 +79,9 @@
                         <a href="static/resume.pdf" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Resume" title="View my resume">
                             <i class="fas fa-file-alt" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.buymeacoffee.com/janblomme" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Buy Me a Coffee" title="Support my work">
+                        <a href="https://www.buymeacoffee.com/janblomme" target="_blank" rel="noopener noreferrer" class="social-link coffee-btn" aria-label="Buy Me a Coffee" title="Support my work">
                             <i class="fas fa-coffee" aria-hidden="true"></i>
+                            <span class="coffee-text">Support Me</span>
                         </a>
                     </div>
                 </div>
@@ -178,60 +179,77 @@
                         </p>
                     </header>
                     
-                    <div class="card mb-6">
-                        <h3 class="card-title">Professional Journey</h3>
-                        <p class="card-text">
-                            Hi, I'm <strong>Jan Blomme</strong>, a hybrid of engineer, builder, designer, and storyteller based in 
-                            <strong>Zulte, Belgium</strong>. I'm currently studying <strong>Multimedia Creative Technologies</strong> at HOWEST, 
-                            with a strong specialization in <strong>AI engineering</strong> and <strong>XR development</strong>, and I've completed 
-                            an exchange at <strong>Portsmouth University</strong> in the Faculty of Creative and Cultural Industries.
-                        </p>
-                        <p class="card-text">
-                            But degrees only tell half the story. What really defines me is how I build things that actually work.
-                            I don't just write code. I design systems, build devices, tune interfaces, and connect every layer from 
-                            microcontroller firmware to intuitive user experience.
-                        </p>
-                        <p class="card-text">
-                            Whether it's a tactile XR controller made from wood and ball bearings, a local-first study suite with 
-                            full offline support, or a fully integrated IoT cocktail machine, I'm constantly fusing creativity and 
-                            engineering into real, usable tools.
-                        </p>
+                    <!-- Hero Introduction Card -->
+                    <div class="hero-intro-card">
+                        <div class="intro-content">
+                            <h3 class="intro-title">Professional Journey</h3>
+                            <p class="intro-description">
+                                Hi, I'm <span class="highlight">Jan Blomme</span>, a hybrid of engineer, builder, designer, and storyteller based in 
+                                <span class="highlight">Zulte, Belgium</span>. I'm currently studying <span class="highlight">Multimedia Creative Technologies at HOWEST</span>, 
+                                with a strong specialization in <span class="highlight">AI engineering</span> and <span class="highlight">XR development</span>, and I've completed 
+                                an exchange at <span class="highlight">Portsmouth University</span> in the Faculty of Creative and Cultural Industries.
+                            </p>
+                            <p class="intro-description">
+                                But degrees only tell half the story. What really defines me is how I build things that actually work.
+                                I don't just write code. I design systems, build devices, tune interfaces, and connect every layer from 
+                                microcontroller firmware to intuitive user experience.
+                            </p>
+                        </div>
                     </div>
                     
-                    <div class="about-grid">
-                        <div class="card">
-                            <h3 class="card-title">Core Strengths</h3>
+                    <!-- Core Strengths & Philosophy Grid -->
+                    <div class="about-grid enhanced-grid">
+                        <div class="card strength-card">
+                            <div class="card-header-icon">
+                                <i class="fas fa-bolt"></i>
+                                <h3 class="card-title">Core Strengths</h3>
+                            </div>
                             <div class="strength-grid">
                                 <div class="strength-item">
-                                    <span class="strength-icon"><i class="fas fa-tools"></i></span>
+                                    <div class="strength-icon-container">
+                                        <span class="strength-icon"><i class="fas fa-tools"></i></span>
+                                        <div class="strength-pulse"></div>
+                                    </div>
                                     <div class="strength-content">
                                         <strong>Practical Problem Solver</strong>
                                         <p>I don't chase buzzwords. I design, test, break, and rebuild until it works.</p>
                                     </div>
                                 </div>
                                 <div class="strength-item">
-                                    <span class="strength-icon"><i class="fas fa-bolt"></i></span>
+                                    <div class="strength-icon-container">
+                                        <span class="strength-icon"><i class="fas fa-rocket"></i></span>
+                                        <div class="strength-pulse"></div>
+                                    </div>
                                     <div class="strength-content">
                                         <strong>Fast Learner</strong>
                                         <p>I adapt to new languages, stacks, and platforms quickly.</p>
                                     </div>
                                 </div>
                                 <div class="strength-item">
-                                    <span class="strength-icon"><i class="fas fa-user-friends"></i></span>
+                                    <div class="strength-icon-container">
+                                        <span class="strength-icon"><i class="fas fa-user-friends"></i></span>
+                                        <div class="strength-pulse"></div>
+                                    </div>
                                     <div class="strength-content">
                                         <strong>Independent but Collaborative</strong>
                                         <p>I thrive solo but bring leadership when needed.</p>
                                     </div>
                                 </div>
                                 <div class="strength-item">
-                                    <span class="strength-icon"><i class="fas fa-eye"></i></span>
+                                    <div class="strength-icon-container">
+                                        <span class="strength-icon"><i class="fas fa-eye"></i></span>
+                                        <div class="strength-pulse"></div>
+                                    </div>
                                     <div class="strength-content">
                                         <strong>Visually Literate</strong>
                                         <p>I understand interface, feedback, and design decisions.</p>
                                     </div>
                                 </div>
                                 <div class="strength-item">
-                                    <span class="strength-icon"><i class="fas fa-layer-group"></i></span>
+                                    <div class="strength-icon-container">
+                                        <span class="strength-icon"><i class="fas fa-layer-group"></i></span>
+                                        <div class="strength-pulse"></div>
+                                    </div>
                                     <div class="strength-content">
                                         <strong>Full-Stack Thinker</strong>
                                         <p>From soldering joints to cloud APIs, I connect everything.</p>
@@ -240,51 +258,123 @@
                             </div>
                         </div>
                         
-                        <div class="card">
-                            <h3 class="card-title">What Makes Me Different</h3>
-                            <p class="card-text">
-                                Most developers stay digital. I bridge the digital and physical. I'm not afraid to solder something at 3AM, 
-                                write firmware from scratch, or design a UI that doesn't just "work", it <strong>feels</strong> right.
-                            </p>
-                            <p class="card-text">
-                                My tools are made to be used. My apps are designed to be intuitive. My stack doesn't care about trends, 
-                                only results. And my mission is simple: build tools, apps, and experiences that <strong>do something real</strong>.
-                            </p>
+                        <div class="card philosophy-card">
+                            <div class="card-header-icon">
+                                <i class="fas fa-lightbulb"></i>
+                                <h3 class="card-title">What Makes Me Different</h3>
+                            </div>
+                            <div class="philosophy-content">
+                                <div class="philosophy-point">
+                                    <div class="point-marker"></div>
+                                    <p>
+                                        Most developers stay digital. I bridge the digital and physical. I'm not afraid to solder something at 3AM, 
+                                        write firmware from scratch, or design a UI that doesn't just "work", it <strong>feels</strong> right.
+                                    </p>
+                                </div>
+                                <div class="philosophy-point">
+                                    <div class="point-marker"></div>
+                                    <p>
+                                        My tools are made to be used. My apps are designed to be intuitive. My stack doesn't care about trends, 
+                                        only results. And my mission is simple: build tools, apps, and experiences that <strong>do something real</strong>.
+                                    </p>
+                                </div>
+                                <div class="intro-quote">
+                                    <p>
+                                        Whether it's a tactile XR controller made from wood and ball bearings, a local-first study suite with 
+                                        full offline support, or a fully integrated IoT cocktail machine, I'm constantly fusing creativity and 
+                                        engineering into real, usable tools."
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="about-grid">
-                        <div class="card">
-                            <h3 class="card-title">Languages</h3>
+                    <!-- Languages & Interests Grid -->
+                    <div class="about-grid skills-interests-grid">
+                        <div class="card languages-card">
+                            <div class="card-header-icon">
+                                <i class="fas fa-globe"></i>
+                                <h3 class="card-title">Languages</h3>
+                            </div>
                             <div class="language-list">
                                 <div class="language-item">
-                                    <span class="language-name">Dutch</span>
-                                    <span class="language-level">Native</span>
+                                    <div class="language-info">
+                                        <span class="language-name">Dutch</span>
+                                        <span class="language-level">Native</span>
+                                    </div>
+                                    <div class="language-progress">
+                                        <div class="progress-bar" data-level="100"></div>
+                                    </div>
                                 </div>
                                 <div class="language-item">
-                                    <span class="language-name">English</span>
-                                    <span class="language-level">Fluent</span>
+                                    <div class="language-info">
+                                        <span class="language-name">English</span>
+                                        <span class="language-level">Fluent</span>
+                                    </div>
+                                    <div class="language-progress">
+                                        <div class="progress-bar" data-level="95"></div>
+                                    </div>
                                 </div>
                                 <div class="language-item">
-                                    <span class="language-name">French</span>
-                                    <span class="language-level">Intermediate</span>
+                                    <div class="language-info">
+                                        <span class="language-name">French</span>
+                                        <span class="language-level">Intermediate</span>
+                                    </div>
+                                    <div class="language-progress">
+                                        <div class="progress-bar" data-level="70"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="card">
-                            <h3 class="card-title">Interests</h3>
-                            <div class="interests-grid">
-                                <span class="interest-tag">Artificial Intelligence</span>
-                                <span class="interest-tag">XR and Immersive Tech</span>
-                                <span class="interest-tag">IoT and DIY Hardware</span>
-                                <span class="interest-tag">Geopolitics</span>
-                                <span class="interest-tag">World History</span>
-                                <span class="interest-tag">Photography</span>
-                                <span class="interest-tag">Visual Storytelling</span>
-                                <span class="interest-tag">Fitness & Gym</span>
-                                <span class="interest-tag">Badminton</span>
-                                <span class="interest-tag">Music</span>
+                        <div class="card interests-card">
+                            <div class="card-header-icon">
+                                <i class="fas fa-heart"></i>
+                                <h3 class="card-title">Interests & Passions</h3>
+                            </div>
+                            <div class="interests-container">
+                                <div class="interests-grid">
+                                    <span class="interest-tag tech-interest">
+                                        <i class="fas fa-brain"></i>
+                                        Artificial Intelligence
+                                    </span>
+                                    <span class="interest-tag tech-interest">
+                                        <i class="fas fa-vr-cardboard"></i>
+                                        XR and Immersive Tech
+                                    </span>
+                                    <span class="interest-tag tech-interest">
+                                        <i class="fas fa-microchip"></i>
+                                        IoT and DIY Hardware
+                                    </span>
+                                    <span class="interest-tag academic-interest">
+                                        <i class="fas fa-globe-americas"></i>
+                                        Geopolitics
+                                    </span>
+                                    <span class="interest-tag academic-interest">
+                                        <i class="fas fa-landmark"></i>
+                                        World History
+                                    </span>
+                                    <span class="interest-tag creative-interest">
+                                        <i class="fas fa-camera"></i>
+                                        Photography
+                                    </span>
+                                    <span class="interest-tag creative-interest">
+                                        <i class="fas fa-film"></i>
+                                        Visual Storytelling
+                                    </span>
+                                    <span class="interest-tag lifestyle-interest">
+                                        <i class="fas fa-dumbbell"></i>
+                                        Fitness & Gym
+                                    </span>
+                                    <span class="interest-tag lifestyle-interest">
+                                        <i class="fas fa-table-tennis"></i>
+                                        Badminton
+                                    </span>
+                                    <span class="interest-tag lifestyle-interest">
+                                        <i class="fas fa-music"></i>
+                                        Music
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -293,37 +383,95 @@
                 <!-- Experience Section -->
                 <section id="experience" class="section" aria-labelledby="experience-title">
                     <header class="section-header">
-                        <h2 class="section-title" id="experience-title">Experience</h2>
+                        <h2 class="section-title" id="experience-title">Professional Journey</h2>
                         <p class="section-subtitle">
                             Building practical solutions across diverse industries while developing expertise in AI, XR, and hardware.
                         </p>
                     </header>
                     
-                    <div class="timeline">
-                        <article class="timeline-item">
-                            <div class="timeline-date">2017 - Present</div>
-                            <div class="timeline-content">
-                                <h3>Occasional Worker</h3>
-                                <p class="timeline-company">JB-signs</p>
-                                <p class="timeline-description">
-                                    Custom signage, hardware hacks, and lettering tools development. Web & graphic design services 
-                                    and on-site tech support. Frequent crossover between physical creation and digital tooling, 
-                                    bridging traditional craftsmanship with modern technology solutions.
-                                </p>
+                    <div class="experience-container">
+                        <!-- Current Positions -->
+                        <div class="experience-period">
+                            <div class="period-header">
+                                <h3 class="period-title">Current Positions</h3>
                             </div>
-                        </article>
+                    
+                    <div class="experience-grid">
+                                <article class="experience-card full-width primary-role">
+                                    <div class="card-header">
+                                        <div class="role-badge founder">Founder & CEO</div>
+                                        <div class="experience-dates">2025 - Present</div>
+                                    </div>
+                                    <div class="experience-content">
+                                        <h4 class="experience-title">Founder & CEO</h4>
+                                        <p class="experience-company">itsBryce</p>
+                                        <ul class="experience-highlights">
+                                            <li>Builds full-stack websites and apps, from idea to deployment</li>
+                                            <li>Leads UI/UX design, branding, logo creation, and visual identity</li>
+                                            <li>Develops tools and custom software for desktop, web, and embedded systems</li>
+                                            <li>Delivers digital projects for JB-Signs and family-run businesses</li>
+                                            <li>If it runs pixels, I make it work—clean, fast, and reliable</li>
+                                        </ul>
+                                </div>
+                            </article>
+                            
+                                <article class="experience-card">
+                                    <div class="card-header">
+                                        <div class="role-badge partner">Partner</div>
+                                        <div class="experience-dates">2025 - Present</div>
+                                    </div>
+                                    <div class="experience-content">
+                                        <h4 class="experience-title">Technical Partner</h4>
+                                        <p class="experience-company">JB-signs</p>
+                                        <ul class="experience-highlights">
+                                            <li>Merges signage and hardware with smart tech integrations</li>
+                                            <li>Builds custom tools and light automation for production workflows</li>
+                                            <li>Modernizes traditional craft with hands-on engineering</li>
+                                            <li>Collaborates with itsBryce for digital project delivery</li>
+                                        </ul>
+                                </div>
+                            </article>
+                            
+                                <article class="experience-card">
+                                    <div class="card-header">
+                                        <div class="role-badge horeca">Bartender & IT</div>
+                                        <div class="experience-dates">2021 - Present</div>
+                                    </div>
+                                    <div class="experience-content">
+                                        <h4 class="experience-title">Bartender & IT Support</h4>
+                                        <p class="experience-company">De Treffer Bar</p>
+                                        <ul class="experience-highlights">
+                                            <li>Keeps up with high-volume bar service while solving tech issues</li>
+                                            <li>Provides on-site IT troubleshooting and systems support</li>
+                                            <li>Mixes hospitality with technical know-how, fast and friendly</li>
+                                        </ul>
+                                </div>
+                            </article>
+                            </div>
+                        </div>
                         
-                        <article class="timeline-item">
-                            <div class="timeline-date">2017 - Present</div>
-                            <div class="timeline-content">
-                                <h3>Bartender & IT Support</h3>
-                                <p class="timeline-company">De Treffer Bar</p>
-                                <p class="timeline-description">
-                                    Bartending and general hospitality services alongside ad hoc IT repair and maintenance. 
-                                    Combining customer service skills with technical problem-solving in a fast-paced environment.
-                                </p>
+                        <!-- Earlier Roles -->
+                        <div class="experience-period">
+                            <div class="period-header">
+                                <h3 class="period-title">Earlier Roles</h3>
                             </div>
-                        </article>
+                            
+                            <article class="experience-card full-width completed">
+                                <div class="card-header">
+                                    <div class="role-badge tech">Technical Support</div>
+                                    <div class="experience-dates">2017 - 2025</div>
+                                </div>
+                                <div class="experience-content">
+                                    <h4 class="experience-title">Occasional Worker</h4>
+                                    <p class="experience-company">JB-signs</p>
+                                    <ul class="experience-highlights">
+                                        <li>Worked hands-on with signage installs and lettering projects</li>
+                                        <li>Offered on-demand help with graphics and web presence</li>
+                                        <li>Introduced low-cost tech fixes to streamline daily work</li>
+                                    </ul>
+                                </div>
+                            </article>
+                        </div>
                     </div>
                 </section>
                 
@@ -564,92 +712,143 @@
                 <!-- Projects Section -->
                 <section id="projects" class="section" aria-labelledby="projects-title">
                     <header class="section-header">
-                        <h2 class="section-title" id="projects-title">Key Projects</h2>
+                        <h2 class="section-title" id="projects-title">Project Showcase</h2>
                         <p class="section-subtitle">
                             Bridging the digital and physical worlds through innovative hardware and software solutions.
                         </p>
                     </header>
                     
-                    <div class="projects-grid">
-                        <article class="project-card" tabindex="0">
-                            <h3 class="project-title">OrbitalPlay Controller (2025)</h3>
-                            <p class="project-description">
-                                An open-source XR hardware controller using omnidirectional ball-on-bearing tracking, 
-                                powered by a Seeed XIAO RP2040. Features C++ firmware, paddle input + game logic in JS + Canvas. 
-                                Fully documented with CAD files, firmware, BOM on GitHub. Designed for tactile realism and immersive demos.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">C++</span>
-                                <span class="project-tag">JavaScript</span>
-                                <span class="project-tag">Canvas</span>
-                                <span class="project-tag">Hardware</span>
-                                <span class="project-tag">XR</span>
+                    <div class="projects-workspace">
+                        <!-- Active Development -->
+                        <div class="project-section">
+                            <div class="section-divider">
+                                <div class="section-label">Active Development</div>
+                                <div class="status-dot active"></div>
                             </div>
-                        </article>
+                            
+                            <div class="projects-board">
+                                <div class="project-tile">
+                                    <div class="tile-header">
+                                        <span class="project-meta">2025</span>
+                                        <span class="status-indicator active">In Progress</span>
+                                    </div>
+                                    
+                                    <div class="project-info">
+                                        <h3 class="project-name">Relivem</h3>
+                                        <p class="project-summary">
+                                            A nostalgia-driven photo journaling app built with Flutter and Firebase. Designed for private use with timeline, daily prompts, tagging, and exportable metadata. Timeline and interface evoke warmth and memory with a custom design language.
+                                        </p>
+                                        
+                                        <div class="tech-grid">
+                                            <span class="tech-tag lead">Flutter</span>
+                                            <span class="tech-tag">Dart</span>
+                                            <span class="tech-tag">Firebase</span>
+                                            <span class="tech-tag">SQLite</span>
+                                            <span class="tech-tag">Mobile</span>
+                                            <span class="tech-tag">UX</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-tile">
+                                    <div class="tile-header">
+                                        <span class="project-meta">2025</span>
+                                        <span class="status-indicator ongoing">Ongoing</span>
+                                    </div>
+                                    
+                                    <div class="project-info">
+                                        <h3 class="project-name">Student Tools Suite</h3>
+                                        <p class="project-summary">
+                                            A fully offline-first productivity platform built in modular HTML/CSS/JS. Includes Flashcards, Infinite Whiteboard, Pomodoro Timer, Markdown Notes, and more. Unified theming and consistent UX across tools.
+                                        </p>
+                                        
+                                        <div class="tech-grid">
+                                            <span class="tech-tag lead">JavaScript</span>
+                                            <span class="tech-tag">HTML/CSS</span>
+                                            <span class="tech-tag">Tailwind</span>
+                                            <span class="tech-tag">IndexedDB</span>
+                                            <span class="tech-tag">Offline-First</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         
-                        <article class="project-card" tabindex="0">
-                            <h3 class="project-title">Smart Cocktail Shaker (2024)</h3>
-                            <p class="project-description">
-                                An IoT drink mixer with a custom Raspberry Pi touchscreen UI. Features motor-controlled liquid dispensing 
-                                and Python GPIO logic. Designed for demo usability, with physical buttons, screen UI, and automation. 
-                                Combines hardware engineering with intuitive software design.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span>
-                                <span class="project-tag">Raspberry Pi</span>
-                                <span class="project-tag">GPIO</span>
-                                <span class="project-tag">IoT</span>
-                                <span class="project-tag">Hardware</span>
+                        <!-- Completed Portfolio -->
+                        <div class="project-section">
+                            <div class="section-divider">
+                                <div class="section-label">Completed Portfolio</div>
+                                <div class="status-dot completed"></div>
                             </div>
-                        </article>
-                        
-                        <article class="project-card" tabindex="0">
-                            <h3 class="project-title">NMBS PowerApp (2023)</h3>
-                            <p class="project-description">
-                                Hackathon runner-up: onboarding app for the Belgian rail company. Built in Microsoft PowerApps with 
-                                mobile-first, accessibility-first approach. Optimized for internal enterprise use with focus on user 
-                                experience and efficient workflow integration.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">PowerApps</span>
-                                <span class="project-tag">Mobile-First</span>
-                                <span class="project-tag">Accessibility</span>
-                                <span class="project-tag">Enterprise</span>
-                                <span class="project-tag">UX</span>
+                            
+                            <div class="projects-board">
+                                <div class="project-tile">
+                                    <div class="tile-header">
+                                        <span class="project-meta">2025</span>
+                                        <span class="status-indicator completed">Shipped</span>
+                                    </div>
+                                    
+                                    <div class="project-info">
+                                        <h3 class="project-name">OrbitalPlay Controller</h3>
+                                        <p class="project-summary">
+                                            An open-source XR hardware controller using omnidirectional ball-on-bearing tracking, powered by a Seeed XIAO RP2040. Features C++ firmware, paddle input, and immersive JS-based demos. Fully documented with CAD, firmware, and BOM on GitHub.
+                                        </p>
+                                        
+                                        <div class="tech-grid">
+                                            <span class="tech-tag lead">C++</span>
+                                            <span class="tech-tag">JavaScript</span>
+                                            <span class="tech-tag">Canvas</span>
+                                            <span class="tech-tag">Hardware</span>
+                                            <span class="tech-tag">XR</span>
+                                            <span class="tech-tag">Open Source</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-tile">
+                                    <div class="tile-header">
+                                        <span class="project-meta">2024</span>
+                                        <span class="status-indicator prototype">Prototype</span>
+                                    </div>
+                                    
+                                    <div class="project-info">
+                                        <h3 class="project-name">Smart Cocktail Shaker</h3>
+                                        <p class="project-summary">
+                                            A proof-of-concept IoT drink dispenser with Raspberry Pi UI and Python-controlled GPIO motors. Includes touchscreen interface, physical controls, and preset recipes. Designed for demo purposes and rapid iteration.
+                                        </p>
+                                        
+                                        <div class="tech-grid">
+                                            <span class="tech-tag lead">Python</span>
+                                            <span class="tech-tag">Raspberry Pi</span>
+                                            <span class="tech-tag">IoT</span>
+                                            <span class="tech-tag">Hardware</span>
+                                            <span class="tech-tag">GPIO</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-tile">
+                                    <div class="tile-header">
+                                        <span class="project-meta">2023</span>
+                                        <span class="status-indicator completed">Shipped</span>
                             </div>
-                        </article>
-                        
-                        <article class="project-card" tabindex="0">
-                            <h3 class="project-title">Student Tools Suite (Ongoing)</h3>
-                            <p class="project-description">
-                                A fully local, offline-first productivity toolkit for students. Built in HTML/CSS/JS with Tailwind and IndexedDB. 
-                                Includes Flashcard app, Infinite Whiteboard, Pomodoro Timer, Note-taking with Markdown, Quiz Generator (CSV input), 
-                                and more. Unified design system and storage logic. No accounts, no cloud dependencies, just performance and privacy.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">HTML/CSS/JS</span>
-                                <span class="project-tag">Tailwind</span>
-                                <span class="project-tag">IndexedDB</span>
-                                <span class="project-tag">Offline-First</span>
-                                <span class="project-tag">Privacy</span>
+                                    
+                                    <div class="project-info">
+                                        <h3 class="project-name">NMBS PowerApp</h3>
+                                        <p class="project-summary">
+                                            Runner-up at hackathon for Belgian Railways. Created an onboarding app using Microsoft PowerApps. Emphasized mobile-first UX, accessibility, and internal workflow optimization for enterprise environments.
+                                        </p>
+                                        
+                                        <div class="tech-grid">
+                                            <span class="tech-tag lead">PowerApps</span>
+                                            <span class="tech-tag">Enterprise</span>
+                                            <span class="tech-tag">Accessibility</span>
+                                            <span class="tech-tag">Hackathon</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </article>
-                        
-                        <article class="project-card" tabindex="0">
-                            <h3 class="project-title">Relivem App (In Progress)</h3>
-                            <p class="project-description">
-                                A nostalgic daily photo archive app that turns memories into timelines. Features Duolingo-style vertical scroll layout, 
-                                SQLite local storage with export metadata (title, location, people, date, logo), and Firebase for login and syncing. 
-                                Built in Dart + Flutter with tagging, exporting, and smart search. Designed for private archiving, not social media.
-                            </p>
-                            <div class="project-tags">
-                                <span class="project-tag">Dart</span>
-                                <span class="project-tag">Flutter</span>
-                                <span class="project-tag">SQLite</span>
-                                <span class="project-tag">Firebase</span>
-                                <span class="project-tag">Mobile</span>
-                            </div>
-                        </article>
+                        </div>
                     </div>
                 </section>
                 
@@ -662,43 +861,50 @@
                         </p>
                     </header>
                     
-                    <div class="timeline">
-                        <article class="timeline-item">
-                            <div class="timeline-date">2023 - 2026</div>
-                            <div class="timeline-content">
-                                <h3>Bachelor of Science in Multimedia Creative Technology</h3>
-                                <p class="timeline-company">HOWEST Kortrijk</p>
-                                <p class="timeline-description">
+                    <div class="education-timeline">
+                        <div class="education-milestone">
+                            <div class="milestone-period">2023 - 2026</div>
+                            <div class="milestone-content">
+                                <div class="degree-info">
+                                    <h3 class="degree-title">Bachelor of Science in Multimedia Creative Technology</h3>
+                                    <div class="institution primary">HOWEST Kortrijk, Belgium</div>
+                                    <p class="degree-description">
                                     Focus: Artificial Intelligence, XR Development. Projects span from IoT devices to ethical AI and 
                                     immersive interaction. Developing expertise in the convergence of creative technologies with 
                                     practical applications.
                                 </p>
                             </div>
-                        </article>
-                        
-                        <article class="timeline-item">
-                            <div class="timeline-date">Exchange Program (Jan 2025 - Jun 2025)</div>
-                            <div class="timeline-content">
-                                <h3>Faculty of Creative and Cultural Industries</h3>
-                                <p class="timeline-company">University of Portsmouth</p>
-                                <p class="timeline-description">
+                                
+                                <div class="exchange-program">
+                                    <div class="exchange-header">
+                                        <span class="exchange-label">Exchange Program</span>
+                                        <span class="exchange-period">Jan 2025 - Jun 2025</span>
+                                    </div>
+                                    <div class="exchange-content">
+                                        <h4 class="exchange-title">Faculty of Creative and Cultural Industries</h4>
+                                        <div class="institution exchange">University of Portsmouth, UK</div>
+                                        <p class="exchange-description">
                                     Collaborative tech and media approach with international perspective. Gained exposure to different 
                                     methodologies in creative technology and cultural industry applications.
                                 </p>
+                                    </div>
+                                </div>
                             </div>
-                        </article>
+                        </div>
                         
-                        <article class="timeline-item">
-                            <div class="timeline-date">2017 - 2023</div>
-                            <div class="timeline-content">
-                                <h3>Latin & Greek, Networking and Programming</h3>
-                                <p class="timeline-company">Campus College Waregem</p>
-                                <p class="timeline-description">
+                        <div class="education-milestone">
+                            <div class="milestone-period">2017 - 2023</div>
+                            <div class="milestone-content">
+                                <div class="degree-info">
+                                    <h3 class="degree-title">Latin & Greek, Networking and Programming</h3>
+                                    <div class="institution primary">Campus College Waregem, Belgium</div>
+                                    <p class="degree-description">
                                     Unique combination of classical studies and modern technology. Developed strong analytical thinking 
                                     through classical languages while building foundational programming and networking skills.
                                 </p>
+                                </div>
                             </div>
-                        </article>
+                        </div>
                     </div>
                 </section>
             </div>
