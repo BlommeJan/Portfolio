@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
     <meta name="description" content="Jan Blomme - Professional Portfolio | AI Engineer, XR Developer, Multimedia Creative Technologies Student specializing in AI engineering and XR development">
     <meta name="keywords" content="Jan Blomme, AI Engineer, XR Developer, Multimedia Creative Technologies, HOWEST, Belgium, Portfolio, Python, IoT, Hardware">
     <meta name="author" content="Jan Blomme">
@@ -10,20 +12,43 @@
     
     <title>Jan Blomme • Portfolio</title>
     
+    <!-- Critical CSS for immediate rendering -->
+    <style>
+        /* Critical CSS for LCP optimization */
+        body { margin: 0; background: #0F172A; color: #F8FAFC; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+        .app { display: flex; min-height: 100vh; }
+        .sidebar { width: 300px; background: rgba(15, 23, 42, 0.9); border-right: 1px solid rgba(0, 212, 255, 0.3); }
+        .main-content { flex: 1; padding: 2rem; }
+        .profile-image { border-radius: 50%; max-width: 100%; height: auto; }
+        .profile-name { margin: 1rem 0 0.5rem; font-size: 1.5rem; font-weight: 600; }
+        .section { display: none; }
+        .section.active { display: block; }
+        @media (max-width: 1024px) { .sidebar { display: none; } .main-content { padding: 1rem; } }
+    </style>
+    
     <!-- Preload critical resources -->
     <link rel="preload" href="static/css/style.css" as="style">
     <link rel="preload" href="static/js/script.js" as="script">
+    <link rel="preload" href="static/janBlomme.JPG" as="image" fetchpriority="high">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" crossorigin>
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
     
     <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'; this.onload=null;">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <!-- Styles -->
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/style.css" media="all">
 </head>
 <body>
     <!-- Skip to main content for accessibility -->
@@ -46,7 +71,7 @@
             <!-- Profile Section -->
             <section class="profile-section">
                 <div class="profile-avatar" aria-hidden="true">
-                    <img src="static/janBlomme.JPG" alt="Jan Blomme" class="profile-image">
+                    <img src="static/janBlomme.JPG" alt="Jan Blomme" class="profile-image" loading="eager" fetchpriority="high" width="150" height="150">
                 </div>
                 
                 <h1 class="profile-name">Jan Blomme</h1>
@@ -131,7 +156,7 @@
                 <div class="mobile-profile-card">
                     <div class="mobile-profile-header">
                         <div class="mobile-profile-avatar">
-                            <img src="static/janBlomme.JPG" alt="Jan Blomme" class="profile-image">
+                            <img src="static/janBlomme.JPG" alt="Jan Blomme" class="profile-image" loading="eager" fetchpriority="high" width="80" height="80">
                         </div>
                         <div class="mobile-profile-info">
                             <h2 class="mobile-profile-name">Jan Blomme</h2>
@@ -915,6 +940,6 @@
     <div id="announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
     
     <!-- Scripts -->
-    <script src="static/js/script.js"></script>
+    <script src="static/js/script.js" defer></script>
 </body>
 </html> 
