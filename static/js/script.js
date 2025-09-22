@@ -11,12 +11,16 @@ class Portfolio {
     }
 
     init() {
-        this.setupEventListeners();
-        this.setupIntersectionObserver();
-        this.handleInitialHash();
-        this.preloadImages();
-        this.setupSkillsToggle();
-        this.setupAboutAnimations();
+        try {
+            this.setupEventListeners();
+            this.setupIntersectionObserver();
+            this.handleInitialHash();
+            this.preloadImages();
+            this.setupSkillsToggle();
+            this.setupAboutAnimations();
+        } catch (error) {
+            console.warn('Portfolio initialization error (non-critical):', error);
+        }
     }
 
     setupEventListeners() {
@@ -102,10 +106,15 @@ class Portfolio {
     }
 
     updateURL(sectionId) {
-        // Update URL without triggering navigation
-        const url = new URL(window.location);
-        url.hash = sectionId;
-        window.history.replaceState({}, '', url);
+        try {
+            // Update URL without triggering navigation
+            const url = new URL(window.location);
+            url.hash = sectionId;
+            window.history.replaceState({}, '', url);
+        } catch (error) {
+            // Fallback for URL update issues
+            console.warn('URL update failed (non-critical):', error);
+        }
     }
 
     announceNavigation(sectionId) {
@@ -192,14 +201,20 @@ class Portfolio {
     }
 
     handleInitialHash() {
-        const hash = window.location.hash.substring(1);
-        if (hash && document.getElementById(hash)) {
-            const navLink = document.querySelector(`[data-section="${hash}"]`);
-            if (navLink) {
-                this.showSection(hash);
-                this.updateActiveNavLink(navLink);
-                this.currentSection = hash;
+        try {
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash)) {
+                const navLink = document.querySelector(`[data-section="${hash}"]`);
+                if (navLink) {
+                    this.showSection(hash);
+                    this.updateActiveNavLink(navLink);
+                    this.currentSection = hash;
+                }
             }
+        } catch (error) {
+            console.warn('Hash navigation error (non-critical):', error);
+            // Fallback to default about section
+            this.showSection('about');
         }
     }
 
@@ -435,9 +450,45 @@ class Portfolio {
     }
 }
 
+// Add global error handler for extension-related errors
+window.addEventListener('error', (event) => {
+    // Suppress common extension errors that don't affect our code
+    const extensionErrors = [
+        'A listener indicated an asynchronous response by returning true',
+        'Extension context invalidated',
+        'Receiving end does not exist'
+    ];
+    
+    if (extensionErrors.some(error => event.message.includes(error))) {
+        console.warn('Extension error suppressed:', event.message);
+        event.preventDefault();
+        return false;
+    }
+});
+
+// Add unhandled promise rejection handler
+window.addEventListener('unhandledrejection', (event) => {
+    const extensionErrors = [
+        'A listener indicated an asynchronous response by returning true',
+        'Extension context invalidated',
+        'message channel closed'
+    ];
+    
+    if (extensionErrors.some(error => event.reason?.message?.includes(error))) {
+        console.warn('Extension promise rejection suppressed:', event.reason?.message);
+        event.preventDefault();
+        return false;
+    }
+});
+
 // Initialize portfolio when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    new Portfolio();
+    try {
+        new Portfolio();
+        console.log('Portfolio initialized successfully');
+    } catch (error) {
+        console.error('Portfolio initialization failed:', error);
+    }
 });
 
 // Add CSS for animations
