@@ -1,948 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="description" content="Jan Blomme - Professional Portfolio | AI Engineer, XR Developer, Multimedia Creative Technologies Student specializing in AI engineering and XR development">
-    <meta name="keywords" content="Jan Blomme, AI Engineer, XR Developer, Multimedia Creative Technologies, HOWEST, Belgium, Portfolio, Python, IoT, Hardware">
-    <meta name="author" content="Jan Blomme">
-    <meta name="theme-color" content="#00D4FF">
-    
-    <title>Jan Blomme • Portfolio</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="static/favicon.png">
-    
-    <!-- Critical CSS for immediate rendering -->
-    <style>
-        /* Critical CSS for LCP optimization */
-        body { margin: 0; background: #0F172A; color: #F8FAFC; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-        .app { display: flex; min-height: 100vh; }
-        .sidebar { width: 300px; background: rgba(15, 23, 42, 0.9); border-right: 1px solid rgba(0, 212, 255, 0.3); }
-        .main-content { flex: 1; padding: 2rem; }
-        .profile-image { border-radius: 50%; max-width: 100%; height: auto; }
-        .profile-name { margin: 1rem 0 0.5rem; font-size: 1.5rem; font-weight: 600; }
-        .section { display: none; }
-        .section.active { display: block; }
-        @media (max-width: 1024px) { .sidebar { display: none; } .main-content { padding: 1rem; } }
-    </style>
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="static/css/style.css" as="style">
-    <link rel="preload" href="static/js/script.js" as="script">
-    <link rel="preload" href="static/janBlomme.JPG" as="image" fetchpriority="high">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" crossorigin="anonymous">
-    
-    <!-- DNS prefetch for external resources -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'; this.onload=null;" crossorigin="anonymous">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous"></noscript>
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="static/css/style.css" media="all">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jan Blomme</title>
+<meta name="description" content="Jan Blomme — Flemish maker, founder of itsBryce. Embedded hardware, firmware, apps, web. Full-stack from PCB to cloud.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230a0b0a'/%3E%3Ccircle cx='8' cy='8' r='3.4' fill='%235fd38a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jan Blomme — full-stack from PCB to cloud">
+<meta property="og:description" content="Flemish maker, founder of itsBryce. Embedded hardware, firmware, apps, web.">
+<meta property="og:image" content="assets/images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="assets/images/og-image.jpg">
 </head>
 <body>
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <!-- Mobile Navigation -->
-    <nav class="mobile-nav" aria-label="Mobile navigation">
-        <a href="#" class="mobile-nav-brand">Jan Blomme</a>
-        <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </nav>
-    
-    <!-- Main App Container -->
-    <div class="app">
-        <!-- Sidebar -->
-        <aside class="sidebar" role="complementary">
-            <!-- Profile Section -->
-            <section class="profile-section">
-                <div class="profile-avatar" aria-hidden="true">
-                    <img src="static/janBlomme.JPG" alt="Jan Blomme" class="profile-image" loading="eager" fetchpriority="high" width="150" height="150">
-                </div>
-                
-                <h1 class="profile-name">Jan Blomme</h1>
-                <p class="profile-title">AI Engineer & XR Developer</p>
-                
-                <div class="profile-tags" aria-label="Specializations">
-                    <span class="tag">AI/ML</span>
-                    <span class="tag">XR/VR</span>
-                    <span class="tag">IoT</span>
-                    <span class="tag">Hardware</span>
-                </div>
-                
-                <div class="social-links-container">
-                    <div class="social-links" aria-label="Social media links">
-                        <a href="mailto:jan@itsbryce.com" class="social-link" aria-label="Email" title="Send me an email">
-                            <i class="fas fa-envelope" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://github.com/BlommeJan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub" title="View my GitHub profile">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/jan-blomme/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn" title="Connect on LinkedIn">
-                            <i class="fab fa-linkedin" aria-hidden="true"></i>
-                        </a>
-                        <!-- <a href="https://www.youtube.com/@TheBryceByte" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube" title="View my YouTube channel">
-                            <i class="fab fa-youtube" aria-hidden="true"></i>
-                        </a> -->
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="static/resume.pdf" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Resume" title="View my resume">
-                            <i class="fas fa-file-alt" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://www.buymeacoffee.com/janblomme" target="_blank" rel="noopener noreferrer" class="social-link coffee-btn" aria-label="Buy Me a Coffee" title="Support my work">
-                            <i class="fas fa-coffee" aria-hidden="true"></i>
-                            <span class="coffee-text">Support Me</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Navigation -->
-            <nav class="navigation" aria-label="Main navigation">
-                <ul class="nav-list" role="menubar">
-                    <li class="nav-item" role="none">
-                        <a href="#about" class="nav-link active" data-section="about" role="menuitem" aria-current="page">
-                            <i class="fas fa-user nav-icon" aria-hidden="true"></i>
-                            <span>About</span>
-                        </a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a href="#experience" class="nav-link" data-section="experience" role="menuitem">
-                            <i class="fas fa-briefcase nav-icon" aria-hidden="true"></i>
-                            <span>Experience</span>
-                        </a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a href="#skills" class="nav-link" data-section="skills" role="menuitem">
-                            <i class="fas fa-code nav-icon" aria-hidden="true"></i>
-                            <span>Skills</span>
-                        </a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a href="#projects" class="nav-link" data-section="projects" role="menuitem">
-                            <i class="fas fa-rocket nav-icon" aria-hidden="true"></i>
-                            <span>Projects</span>
-                        </a>
-                    </li>
-                    <li class="nav-item" role="none">
-                        <a href="#education" class="nav-link" data-section="education" role="menuitem">
-                            <i class="fas fa-graduation-cap nav-icon" aria-hidden="true"></i>
-                            <span>Education</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </aside>
-        
-        <!-- Main Content -->
-        <main class="main-content" id="main-content">
-            <!-- Mobile Profile Section (only visible on mobile) -->
-            <div class="mobile-profile-section">
-                <div class="mobile-profile-card">
-                    <div class="mobile-profile-header">
-                        <div class="mobile-profile-avatar">
-                            <img src="static/janBlomme.JPG" alt="Jan Blomme" class="profile-image" loading="eager" fetchpriority="high" width="80" height="80">
-                        </div>
-                        <div class="mobile-profile-info">
-                            <h2 class="mobile-profile-name">Jan Blomme</h2>
-                            <p class="mobile-profile-title">AI Engineer & XR Developer</p>
-                        </div>
-                    </div>
-                    
-                    <div class="mobile-profile-tags">
-                        <span class="tag">AI/ML</span>
-                        <span class="tag">XR/VR</span>
-                        <span class="tag">IoT</span>
-                        <span class="tag">Hardware</span>
-                    </div>
-                    
-                    <div class="mobile-social-links">
-                        <a href="mailto:jan@itsbryce.com" class="social-link" aria-label="Email" title="Send me an email">
-                            <i class="fas fa-envelope" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://github.com/BlommeJan" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub" title="View my GitHub profile">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/jan-blomme/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn" title="Connect on LinkedIn">
-                            <i class="fab fa-linkedin" aria-hidden="true"></i>
-                        </a>
-                        <!-- <a href="https://www.youtube.com/@TheBryceByte" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube" title="View my YouTube channel">
-                            <i class="fab fa-youtube" aria-hidden="true"></i>
-                        </a> -->
-                        <a href="static/resume.pdf" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Resume" title="View my resume">
-                            <i class="fas fa-file-alt" aria-hidden="true"></i>
-                        </a>
-                        <a href="https://www.buymeacoffee.com/janblomme" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Buy Me a Coffee" title="Support my work">
-                            <i class="fas fa-coffee" aria-hidden="true"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="content-container">
-                <!-- About Section -->
-                <section id="about" class="section active" aria-labelledby="about-title">
-                    <header class="section-header">
-                        <h2 class="section-title" id="about-title">About Me</h2>
-                        <p class="section-subtitle">
-                            A hybrid of engineer, builder, designer, and storyteller based in Zulte, Belgium.
-                        </p>
-                    </header>
-                    
-                    <!-- Hero Introduction Card -->
-                    <div class="hero-intro-card">
-                        <div class="intro-content">
-                            <h3 class="intro-title">Professional Journey</h3>
-                            <p class="intro-description">
-                                Hi, I'm <span class="highlight">Jan Blomme</span>, a hybrid of engineer, builder, designer, and storyteller based in 
-                                <span class="highlight">Zulte, Belgium</span>. I'm currently studying <span class="highlight">Multimedia Creative Technologies at HOWEST</span>, 
-                                with a strong specialization in <span class="highlight">AI engineering</span> and <span class="highlight">XR development</span>, and I've completed 
-                                an exchange at <span class="highlight">Portsmouth University</span> in the Faculty of Creative and Cultural Industries.
-                            </p>
-                            <p class="intro-description">
-                                But degrees only tell half the story. What really defines me is how I build things that actually work.
-                                I don't just write code. I design systems, build devices, tune interfaces, and connect every layer from 
-                                microcontroller firmware to intuitive user experience.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <!-- Core Strengths & Philosophy Grid -->
-                    <div class="about-grid enhanced-grid">
-                        <div class="card strength-card">
-                            <div class="card-header-icon">
-                                <i class="fas fa-bolt"></i>
-                                <h3 class="card-title">Core Strengths</h3>
-                            </div>
-                            <div class="strength-grid">
-                                <div class="strength-item">
-                                    <div class="strength-icon-container">
-                                        <span class="strength-icon"><i class="fas fa-tools"></i></span>
-                                        <div class="strength-pulse"></div>
-                                    </div>
-                                    <div class="strength-content">
-                                        <strong>Practical Problem Solver</strong>
-                                        <p>I don't chase buzzwords. I design, test, break, and rebuild until it works.</p>
-                                    </div>
-                                </div>
-                                <div class="strength-item">
-                                    <div class="strength-icon-container">
-                                        <span class="strength-icon"><i class="fas fa-rocket"></i></span>
-                                        <div class="strength-pulse"></div>
-                                    </div>
-                                    <div class="strength-content">
-                                        <strong>Fast Learner</strong>
-                                        <p>I adapt to new languages, stacks, and platforms quickly.</p>
-                                    </div>
-                                </div>
-                                <div class="strength-item">
-                                    <div class="strength-icon-container">
-                                        <span class="strength-icon"><i class="fas fa-user-friends"></i></span>
-                                        <div class="strength-pulse"></div>
-                                    </div>
-                                    <div class="strength-content">
-                                        <strong>Independent but Collaborative</strong>
-                                        <p>I thrive solo but bring leadership when needed.</p>
-                                    </div>
-                                </div>
-                                <div class="strength-item">
-                                    <div class="strength-icon-container">
-                                        <span class="strength-icon"><i class="fas fa-eye"></i></span>
-                                        <div class="strength-pulse"></div>
-                                    </div>
-                                    <div class="strength-content">
-                                        <strong>Visually Literate</strong>
-                                        <p>I understand interface, feedback, and design decisions.</p>
-                                    </div>
-                                </div>
-                                <div class="strength-item">
-                                    <div class="strength-icon-container">
-                                        <span class="strength-icon"><i class="fas fa-layer-group"></i></span>
-                                        <div class="strength-pulse"></div>
-                                    </div>
-                                    <div class="strength-content">
-                                        <strong>Full-Stack Thinker</strong>
-                                        <p>From soldering joints to cloud APIs, I connect everything.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="card philosophy-card">
-                            <div class="card-header-icon">
-                                <i class="fas fa-lightbulb"></i>
-                                <h3 class="card-title">What Makes Me Different</h3>
-                            </div>
-                            <div class="philosophy-content">
-                                <div class="philosophy-point">
-                                    <div class="point-marker"></div>
-                                    <p>
-                                        Most developers stay digital. I bridge the digital and physical. I'm not afraid to solder something at 3AM, 
-                                        write firmware from scratch, or design a UI that doesn't just "work", it <strong>feels</strong> right.
-                                    </p>
-                                </div>
-                                <div class="philosophy-point">
-                                    <div class="point-marker"></div>
-                                    <p>
-                                        My tools are made to be used. My apps are designed to be intuitive. My stack doesn't care about trends, 
-                                        only results. And my mission is simple: build tools, apps, and experiences that <strong>do something real</strong>.
-                                    </p>
-                                </div>
-                                <div class="intro-quote">
-                                    <p>
-                                        Whether it's a tactile XR controller made from wood and ball bearings, a local-first study suite with 
-                                        full offline support, or a fully integrated IoT cocktail machine, I'm constantly fusing creativity and 
-                                        engineering into real, usable tools."
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Languages & Interests Grid -->
-                    <div class="about-grid skills-interests-grid">
-                        <div class="card languages-card">
-                            <div class="card-header-icon">
-                                <i class="fas fa-globe"></i>
-                                <h3 class="card-title">Languages</h3>
-                            </div>
-                            <div class="language-list">
-                                <div class="language-item">
-                                    <div class="language-info">
-                                        <span class="language-name">Dutch</span>
-                                        <span class="language-level">Native</span>
-                                    </div>
-                                    <div class="language-progress">
-                                        <div class="progress-bar" data-level="100"></div>
-                                    </div>
-                                </div>
-                                <div class="language-item">
-                                    <div class="language-info">
-                                        <span class="language-name">English</span>
-                                        <span class="language-level">Fluent</span>
-                                    </div>
-                                    <div class="language-progress">
-                                        <div class="progress-bar" data-level="95"></div>
-                                    </div>
-                                </div>
-                                <div class="language-item">
-                                    <div class="language-info">
-                                        <span class="language-name">French</span>
-                                        <span class="language-level">Intermediate</span>
-                                    </div>
-                                    <div class="language-progress">
-                                        <div class="progress-bar" data-level="70"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="card interests-card">
-                            <div class="card-header-icon">
-                                <i class="fas fa-heart"></i>
-                                <h3 class="card-title">Interests & Passions</h3>
-                            </div>
-                            <div class="interests-container">
-                                <div class="interests-grid">
-                                    <span class="interest-tag tech-interest">
-                                        <i class="fas fa-brain"></i>
-                                        Artificial Intelligence
-                                    </span>
-                                    <span class="interest-tag tech-interest">
-                                        <i class="fas fa-vr-cardboard"></i>
-                                        XR and Immersive Tech
-                                    </span>
-                                    <span class="interest-tag tech-interest">
-                                        <i class="fas fa-microchip"></i>
-                                        IoT and DIY Hardware
-                                    </span>
-                                    <span class="interest-tag academic-interest">
-                                        <i class="fas fa-globe-americas"></i>
-                                        Geopolitics
-                                    </span>
-                                    <span class="interest-tag academic-interest">
-                                        <i class="fas fa-landmark"></i>
-                                        World History
-                                    </span>
-                                    <span class="interest-tag creative-interest">
-                                        <i class="fas fa-camera"></i>
-                                        Photography
-                                    </span>
-                                    <span class="interest-tag creative-interest">
-                                        <i class="fas fa-film"></i>
-                                        Visual Storytelling
-                                    </span>
-                                    <span class="interest-tag lifestyle-interest">
-                                        <i class="fas fa-dumbbell"></i>
-                                        Fitness & Gym
-                                    </span>
-                                    <span class="interest-tag lifestyle-interest">
-                                        <i class="fas fa-table-tennis"></i>
-                                        Badminton
-                                    </span>
-                                    <span class="interest-tag lifestyle-interest">
-                                        <i class="fas fa-music"></i>
-                                        Music
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <!-- Experience Section -->
-                <section id="experience" class="section" aria-labelledby="experience-title">
-                    <header class="section-header">
-                        <h2 class="section-title" id="experience-title">Professional Journey</h2>
-                        <p class="section-subtitle">
-                            Building practical solutions across diverse industries while developing expertise in AI, XR, and hardware.
-                        </p>
-                    </header>
-                    
-                    <div class="experience-container">
-                        <!-- Current Positions -->
-                        <div class="experience-period">
-                            <div class="period-header">
-                                <h3 class="period-title">Current Positions</h3>
-                            </div>
-                    
-                    <div class="experience-grid">
-                                <article class="experience-card full-width primary-role">
-                                    <div class="card-header">
-                                        <div class="role-badge founder">Founder & CEO</div>
-                                        <div class="experience-dates">2025 - Present</div>
-                                    </div>
-                                    <div class="experience-content">
-                                        <h4 class="experience-title">Founder & CEO</h4>
-                                        <p class="experience-company">itsBryce</p>
-                                        <ul class="experience-highlights">
-                                            <li>Builds full-stack websites and apps, from idea to deployment</li>
-                                            <li>Leads UI/UX design, branding, logo creation, and visual identity</li>
-                                            <li>Develops tools and custom software for desktop, web, and embedded systems</li>
-                                            <li>Delivers digital projects for JB-Signs and family-run businesses</li>
-                                            <li>If it runs pixels, I make it work—clean, fast, and reliable</li>
-                                        </ul>
-                                </div>
-                            </article>
-                            
-                                <article class="experience-card">
-                                    <div class="card-header">
-                                        <div class="role-badge partner">Partner</div>
-                                        <div class="experience-dates">2025 - Present</div>
-                                    </div>
-                                    <div class="experience-content">
-                                        <h4 class="experience-title">Technical Partner</h4>
-                                        <p class="experience-company">JB-signs</p>
-                                        <ul class="experience-highlights">
-                                            <li>Merges signage and hardware with smart tech integrations</li>
-                                            <li>Builds custom tools and light automation for production workflows</li>
-                                            <li>Modernizes traditional craft with hands-on engineering</li>
-                                            <li>Collaborates with itsBryce for digital project delivery</li>
-                                        </ul>
-                                </div>
-                            </article>
-                            
-                                <article class="experience-card">
-                                    <div class="card-header">
-                                        <div class="role-badge horeca">Bartender & IT</div>
-                                        <div class="experience-dates">2021 - Present</div>
-                                    </div>
-                                    <div class="experience-content">
-                                        <h4 class="experience-title">Bartender & IT Support</h4>
-                                        <p class="experience-company">De Treffer Bar</p>
-                                        <ul class="experience-highlights">
-                                            <li>Keeps up with high-volume bar service while solving tech issues</li>
-                                            <li>Provides on-site IT troubleshooting and systems support</li>
-                                            <li>Mixes hospitality with technical know-how, fast and friendly</li>
-                                        </ul>
-                                </div>
-                            </article>
-                            </div>
-                        </div>
-                        
-                        <!-- Earlier Roles -->
-                        <div class="experience-period">
-                            <div class="period-header">
-                                <h3 class="period-title">Earlier Roles</h3>
-                            </div>
-                            
-                            <article class="experience-card full-width completed">
-                                <div class="card-header">
-                                    <div class="role-badge tech">Technical Support</div>
-                                    <div class="experience-dates">2017 - 2025</div>
-                                </div>
-                                <div class="experience-content">
-                                    <h4 class="experience-title">Occasional Worker</h4>
-                                    <p class="experience-company">JB-signs</p>
-                                    <ul class="experience-highlights">
-                                        <li>Worked hands-on with signage installs and lettering projects</li>
-                                        <li>Offered on-demand help with graphics and web presence</li>
-                                        <li>Introduced low-cost tech fixes to streamline daily work</li>
-                                    </ul>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </section>
-                
-                                    <!-- Skills Section -->
-                                    <section
-                                    id="skills"
-                                    class="section"
-                                    aria-labelledby="skills-title"
-                                >
-                                    <header class="section-header">
-                                        <h2 class="section-title" id="skills-title">
-                                            Technical Arsenal
-                                        </h2>
-                                        <p class="section-subtitle">
-                                            I work across the full stack, and then some.
-                                        </p>
-                                    </header>
-            
-                                    <div class="skills-grid">
-                                        <!-- Programming Languages -->
-                                        <div class="skill-card">
-                                            <h3 class="skill-category">
-                                                <i class="fas fa-code"></i> Programming
-                                                Languages
-                                            </h3>
-            
-                                            <div class="skill-group">
-                                                <h4 class="skill-group-title">Core</h4>
-                                                <ul class="skill-list">
-                                                    <li class="skill-item"><i class="fab fa-python"></i> Python</li>
-                                                    <li class="skill-item"><i class="fab fa-java"></i> Java</li>
-                                                    <li class="skill-item"><i class="fab fa-microsoft"></i> C#</li>
-                                                    <li class="skill-item"><i class="fas fa-code"></i> C++</li>
-                                                    <li class="skill-item"><i class="fab fa-js"></i> JavaScript</li>
-                                                </ul>
-                                            </div>
-            
-                                            <div class="more-skills">
-                                                <div class="skill-group">
-                                                    <h4 class="skill-group-title">
-                                                        Additional
-                                                    </h4>
-                                                    <ul class="skill-list">
-                                                        <li class="skill-item"><i class="fab fa-google"></i> Dart</li>
-                                                        <li class="skill-item"><i class="fas fa-moon"></i> Lua</li>
-                                                        <li class="skill-item"><i class="fas fa-terminal"></i> Bash</li>
-                                                        <li class="skill-item"><i class="fab fa-windows"></i> PowerShell</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-            
-                                            <button
-                                                class="skill-toggle"
-                                                aria-expanded="false"
-                                            >
-                                                Show more
-                                                <i class="fas fa-chevron-down"></i>
-                                            </button>
-                                        </div>
-            
-                                        <!-- AI & Machine Learning -->
-                                        <div class="skill-card">
-                                            <h3 class="skill-category">
-                                                <i class="fas fa-brain"></i> AI & Machine
-                                                Learning
-                                            </h3>
-            
-                                            <div class="skill-group">
-                                                <h4 class="skill-group-title">
-                                                    Frameworks
-                                                </h4>
-                                                <ul class="skill-list">
-                                                    <li class="skill-item"><i class="fas fa-brain"></i> TensorFlow</li>
-                                                    <li class="skill-item"><i class="fas fa-cogs"></i> scikit-learn</li>
-                                                    <li class="skill-item"><i class="fas fa-eye"></i> OpenCV</li>
-                                                    <li class="skill-item"><i class="fas fa-hand-paper"></i> MediaPipe</li>
-                                                </ul>
-                                            </div>
-            
-                                            <div class="more-skills">
-                                                <div class="skill-group">
-                                                    <h4 class="skill-group-title">
-                                                        Data Processing
-                                                    </h4>
-                                                    <ul class="skill-list">
-                                                        <li class="skill-item"><i class="fas fa-table"></i> NumPy</li>
-                                                        <li class="skill-item"><i class="fas fa-table"></i> Pandas</li>
-                                                        <li class="skill-item"><i class="fas fa-chart-bar"></i> Seaborn</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-            
-                                            <button
-                                                class="skill-toggle"
-                                                aria-expanded="false"
-                                            >
-                                                Show more
-                                                <i class="fas fa-chevron-down"></i>
-                                            </button>
-                                        </div>
-            
-                                        <!-- Web & Markup -->
-                                        <div class="skill-card">
-                                            <h3 class="skill-category">
-                                                <i class="fas fa-globe"></i> Web & Markup
-                                            </h3>
-            
-                                            <div class="skill-group">
-                                                <ul class="skill-list">
-                                                    <li class="skill-item"><i class="fab fa-html5"></i> HTML</li>
-                                                    <li class="skill-item"><i class="fab fa-css3-alt"></i> CSS</li>
-                                                    <li class="skill-item"><i class="fab fa-markdown"></i> Markdown</li>
-                                                    <li class="skill-item"><i class="fas fa-code"></i> JSON</li>
-                                                    <li class="skill-item"><i class="fas fa-code"></i> XML</li>
-                                                    <li class="skill-item"><i class="fas fa-file-csv"></i> CSV</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-            
-                                        <!-- Hardware & IoT -->
-                                        <div class="skill-card">
-                                            <h3 class="skill-category">
-                                                <i class="fas fa-microchip"></i> Hardware &
-                                                IoT
-                                            </h3>
-            
-                                            <div class="skill-group">
-                                                <h4 class="skill-group-title">Libraries</h4>
-                                                <ul class="skill-list">
-                                                    <li class="skill-item"><i class="fab fa-raspberry-pi"></i> RPi.GPIO</li>
-                                                    <li class="skill-item"><i class="fas fa-microchip"></i> gpiozero</li>
-                                                    <li class="skill-item"><i class="fas fa-project-diagram"></i> threading</li>
-                                                </ul>
-                                            </div>
-            
-                                            <div class="skill-group">
-                                                <h4 class="skill-group-title">Platforms</h4>
-                                                <ul class="skill-list">
-                                                    <li class="skill-item"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</li>
-                                                    <li class="skill-item"><i class="fas fa-microchip"></i> Arduino/ESP32</li>
-                                                    <li class="skill-item"><i class="fas fa-microchip"></i> Seeed XIAO RP2040</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-            
-                                        <!-- Cloud & APIs -->
-                                        <div class="skill-card">
-                                            <h3 class="skill-category">
-                                                <i class="fas fa-cloud"></i> Cloud & APIs
-                                            </h3>
-            
-                                            <div class="skill-group">
-                                                <ul class="skill-list">
-                                                    <li class="skill-item"><i class="fas fa-fire"></i> Firebase (Firestore, Auth)</li>
-                                                    <li class="skill-item"><i class="fas fa-robot"></i> OpenAI APIs</li>
-                                                    <li class="skill-item"><i class="fab fa-google"></i> Gemini API</li>
-                                                    <li class="skill-item"><i class="fas fa-database"></i> SQLite</li>
-                                                    <li class="skill-item"><i class="fas fa-database"></i> IndexedDB</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-            
-                                        <!-- XR & Game Development -->
-                                        <div class="skill-card">
-                                            <h3 class="skill-category">
-                                                <i class="fas fa-vr-cardboard"></i> XR &
-                                                Game Development
-                                            </h3>
-            
-                                            <div class="skill-group">
-                                                <ul class="skill-list">
-                                                    <li class="skill-item"><i class="fab fa-android"></i> Android XR SDK</li>
-                                                    <li class="skill-item"><i class="fab fa-unity"></i> Unity</li>
-                                                    <li class="skill-item"><i class="fas fa-gamepad"></i> Unreal Engine</li>
-                                                    <li class="skill-item"><i class="fas fa-vr-cardboard"></i> WebXR</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-            
-                                        <!-- Tools & Systems -->
-                                        <div class="skill-card">
-                                            <h3 class="skill-category">
-                                                <i class="fas fa-tools"></i> Tools & Systems
-                                            </h3>
-            
-                                            <div class="skill-group">
-                                                <h4 class="skill-group-title">
-                                                    Development
-                                                </h4>
-                                                <ul class="skill-list">
-                                                    <li class="skill-item"><i class="fas fa-code"></i> VS Code</li>
-                                                    <li class="skill-item"><i class="fab fa-github"></i> GitHub</li>
-                                                    <li class="skill-item"><i class="fab fa-docker"></i> Docker</li>
-                                                </ul>
-                                            </div>
-            
-                                            <div class="more-skills">
-                                                <div class="skill-group">
-                                                    <h4 class="skill-group-title">
-                                                        Design
-                                                    </h4>
-                                                    <ul class="skill-list">
-                                                        <li class="skill-item"><i class="fas fa-cube"></i> 3DS Max</li>
-                                                        <li class="skill-item"><i class="fas fa-cube"></i> Blender</li>
-                                                        <li class="skill-item"><i class="fab fa-figma"></i> Figma</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-            
-                                            <button
-                                                class="skill-toggle"
-                                                aria-expanded="false"
-                                            >
-                                                Show more
-                                                <i class="fas fa-chevron-down"></i>
-                                            </button>
-                                        </div>
-            
-                                        <!-- Operating Systems -->
-                                        <div class="skill-card">
-                                            <h3 class="skill-category">
-                                                <i class="fas fa-desktop"></i> Operating
-                                                Systems
-                                            </h3>
-            
-                                            <div class="skill-group">
-                                                <ul class="skill-list">
-                                                    <li class="skill-item"><i class="fab fa-linux"></i> Linux (Arch, Ubuntu, Debian, Mint)</li>
-                                                    <li class="skill-item"><i class="fab fa-windows"></i> Windows</li>
-                                                    <li class="skill-item"><i class="fas fa-exchange-alt"></i> Dual boot setups</li>
-                                                    <li class="skill-item"><i class="fas fa-server"></i> System Administration</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                
-                <!-- Projects Section -->
-                <section id="projects" class="section" aria-labelledby="projects-title">
-                    <header class="section-header">
-                        <h2 class="section-title" id="projects-title">Project Showcase</h2>
-                        <p class="section-subtitle">
-                            Bridging the digital and physical worlds through innovative hardware and software solutions.
-                        </p>
-                    </header>
-                    
-                    <div class="projects-workspace">
-                        <!-- Active Development -->
-                        <div class="project-section">
-                            <div class="section-divider">
-                                <div class="section-label">Active Development</div>
-                                <div class="status-dot active"></div>
-                            </div>
-                            
-                            <div class="projects-board">
-                                <div class="project-tile">
-                                    <div class="tile-header">
-                                        <span class="project-meta">2025</span>
-                                        <span class="status-indicator active">In Progress</span>
-                                    </div>
-                                    
-                                    <div class="project-info">
-                                        <h3 class="project-name">Relivem</h3>
-                                        <p class="project-summary">
-                                            A nostalgia-driven photo journaling app built with Flutter and Firebase. Designed for private use with timeline, daily prompts, tagging, and exportable metadata. Timeline and interface evoke warmth and memory with a custom design language.
-                                        </p>
-                                        
-                                        <div class="tech-grid">
-                                            <span class="tech-tag lead">Flutter</span>
-                                            <span class="tech-tag">Dart</span>
-                                            <span class="tech-tag">Firebase</span>
-                                            <span class="tech-tag">SQLite</span>
-                                            <span class="tech-tag">Mobile</span>
-                                            <span class="tech-tag">UX</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="project-tile">
-                                    <div class="tile-header">
-                                        <span class="project-meta">2025</span>
-                                        <span class="status-indicator ongoing">Ongoing</span>
-                                    </div>
-                                    
-                                    <div class="project-info">
-                                        <h3 class="project-name">Student Tools Suite</h3>
-                                        <p class="project-summary">
-                                            A fully offline-first productivity platform built in modular HTML/CSS/JS. Includes Flashcards, Infinite Whiteboard, Pomodoro Timer, Markdown Notes, and more. Unified theming and consistent UX across tools.
-                                        </p>
-                                        
-                                        <div class="tech-grid">
-                                            <span class="tech-tag lead">JavaScript</span>
-                                            <span class="tech-tag">HTML/CSS</span>
-                                            <span class="tech-tag">Tailwind</span>
-                                            <span class="tech-tag">IndexedDB</span>
-                                            <span class="tech-tag">Offline-First</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Completed Portfolio -->
-                        <div class="project-section">
-                            <div class="section-divider">
-                                <div class="section-label">Completed Portfolio</div>
-                                <div class="status-dot completed"></div>
-                            </div>
-                            
-                            <div class="projects-board">
-                                <div class="project-tile">
-                                    <div class="tile-header">
-                                        <span class="project-meta">2025</span>
-                                        <span class="status-indicator completed">Shipped</span>
-                                    </div>
-                                    
-                                    <div class="project-info">
-                                        <h3 class="project-name">OrbitalPlay Controller</h3>
-                                        <p class="project-summary">
-                                            An open-source XR hardware controller using omnidirectional ball-on-bearing tracking, powered by a Seeed XIAO RP2040. Features C++ firmware, paddle input, and immersive JS-based demos. Fully documented with CAD, firmware, and BOM on GitHub.
-                                        </p>
-                                        
-                                        <div class="tech-grid">
-                                            <span class="tech-tag lead">C++</span>
-                                            <span class="tech-tag">JavaScript</span>
-                                            <span class="tech-tag">Canvas</span>
-                                            <span class="tech-tag">Hardware</span>
-                                            <span class="tech-tag">XR</span>
-                                            <span class="tech-tag">Open Source</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="project-tile">
-                                    <div class="tile-header">
-                                        <span class="project-meta">2024</span>
-                                        <span class="status-indicator prototype">Prototype</span>
-                                    </div>
-                                    
-                                    <div class="project-info">
-                                        <h3 class="project-name">Smart Cocktail Shaker</h3>
-                                        <p class="project-summary">
-                                            A proof-of-concept IoT drink dispenser with Raspberry Pi UI and Python-controlled GPIO motors. Includes touchscreen interface, physical controls, and preset recipes. Designed for demo purposes and rapid iteration.
-                                        </p>
-                                        
-                                        <div class="tech-grid">
-                                            <span class="tech-tag lead">Python</span>
-                                            <span class="tech-tag">Raspberry Pi</span>
-                                            <span class="tech-tag">IoT</span>
-                                            <span class="tech-tag">Hardware</span>
-                                            <span class="tech-tag">GPIO</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="project-tile">
-                                    <div class="tile-header">
-                                        <span class="project-meta">2023</span>
-                                        <span class="status-indicator completed">Shipped</span>
-                            </div>
-                                    
-                                    <div class="project-info">
-                                        <h3 class="project-name">NMBS PowerApp</h3>
-                                        <p class="project-summary">
-                                            Runner-up at hackathon for Belgian Railways. Created an onboarding app using Microsoft PowerApps. Emphasized mobile-first UX, accessibility, and internal workflow optimization for enterprise environments.
-                                        </p>
-                                        
-                                        <div class="tech-grid">
-                                            <span class="tech-tag lead">PowerApps</span>
-                                            <span class="tech-tag">Enterprise</span>
-                                            <span class="tech-tag">Accessibility</span>
-                                            <span class="tech-tag">Hackathon</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <!-- Education Section -->
-                <section id="education" class="section" aria-labelledby="education-title">
-                    <header class="section-header">
-                        <h2 class="section-title" id="education-title">Education</h2>
-                        <p class="section-subtitle">
-                            A journey through diverse educational experiences, from classical studies to cutting-edge technology.
-                        </p>
-                    </header>
-                    
-                    <div class="education-timeline">
-                        <div class="education-milestone">
-                            <div class="milestone-period">2023 - 2026</div>
-                            <div class="milestone-content">
-                                <div class="degree-info">
-                                    <h3 class="degree-title">Bachelor of Science in Multimedia Creative Technology</h3>
-                                    <div class="institution primary">HOWEST Kortrijk, Belgium</div>
-                                    <p class="degree-description">
-                                    Focus: Artificial Intelligence, XR Development. Projects span from IoT devices to ethical AI and 
-                                    immersive interaction. Developing expertise in the convergence of creative technologies with 
-                                    practical applications.
-                                </p>
-                            </div>
-                                
-                                <div class="exchange-program">
-                                    <div class="exchange-header">
-                                        <span class="exchange-label">Exchange Program</span>
-                                        <span class="exchange-period">Jan 2025 - Jun 2025</span>
-                                    </div>
-                                    <div class="exchange-content">
-                                        <h4 class="exchange-title">Faculty of Creative and Cultural Industries</h4>
-                                        <div class="institution exchange">University of Portsmouth, UK</div>
-                                        <p class="exchange-description">
-                                    Collaborative tech and media approach with international perspective. Gained exposure to different 
-                                    methodologies in creative technology and cultural industry applications.
-                                </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="education-milestone">
-                            <div class="milestone-period">2017 - 2023</div>
-                            <div class="milestone-content">
-                                <div class="degree-info">
-                                    <h3 class="degree-title">Latin & Greek, Networking and Programming</h3>
-                                    <div class="institution primary">Campus College Waregem, Belgium</div>
-                                    <p class="degree-description">
-                                    Unique combination of classical studies and modern technology. Developed strong analytical thinking 
-                                    through classical languages while building foundational programming and networking skills.
-                                </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </main>
+
+<nav class="nav">
+  <a class="brand" href="#top">jan<span class="dot">.</span>blomme<span class="cursor">▌</span></a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#about" data-i18n="nav.about">about</a>
+      <a href="#work" data-i18n="nav.work">work</a>
+      <a href="#experience" data-i18n="nav.xp">experience</a>
+      <a href="#skills" data-i18n="nav.skills">skills</a>
+      <a href="#contact" data-i18n="nav.contact">contact</a>
     </div>
-    
-    <!-- Screen reader announcements -->
-    <div id="announcer" class="sr-only" aria-live="polite" aria-atomic="true"></div>
-    
-    <!-- Scripts -->
-    <script src="static/js/script.js" defer></script>
+    <div class="lang" role="group" aria-label="Language">
+      <button id="lang-en" class="on" aria-pressed="true">EN</button>
+      <button id="lang-nl" aria-pressed="false">NL</button>
+    </div>
+  </div>
+</nav>
+
+<div class="hero" id="top">
+  <div class="hero-stage">
+    <canvas id="pipe" aria-hidden="true"></canvas>
+
+    <div class="cap" id="c0">
+      <h1>JAN<br>BLOMME</h1>
+      <div class="tag" data-i18n="hero.tag">Full-stack from PCB to cloud.</div>
+    </div>
+    <div class="cap" id="c1">
+      <div class="line" data-i18n="cap1">A signal starts on silicon.</div>
+    </div>
+    <div class="cap" id="c2">
+      <div class="line" data-i18n="cap2">It runs the traces. Vias, a bus, a protocol someone had to design. Usually, that someone is me.</div>
+    </div>
+    <div class="cap" id="c3">
+      <div class="line" data-i18n="cap3">Firmware hands it to an OS. The OS hands it to the network.</div>
+    </div>
+    <div class="cap" id="c4">
+      <div class="line" data-i18n="cap4">It ends in the cloud. A database, an API, a screen.</div>
+    </div>
+    <div class="cap" id="c5">
+      <div class="line" data-i18n="cap5">I work the whole path.</div>
+      <div class="sub" data-i18n="cap5s">You just scrolled through the pitch. The rest is detail. ↓</div>
+    </div>
+
+    <div class="hud" aria-hidden="true">
+      <div class="st" data-st="0">L0&nbsp;&nbsp;SILICON</div>
+      <div class="st" data-st="1">L1&nbsp;&nbsp;TRACE</div>
+      <div class="st" data-st="2">L2&nbsp;&nbsp;FIRMWARE</div>
+      <div class="st" data-st="3">L3&nbsp;&nbsp;NETWORK</div>
+      <div class="st" data-st="4">L4&nbsp;&nbsp;CLOUD</div>
+      <div class="pct" id="pct">000%</div>
+    </div>
+    <div class="hint" id="hint" data-i18n="hero.scroll">scroll</div>
+  </div>
+</div>
+
+<main>
+
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="ey.about">about</div>
+    <div class="about">
+      <p class="big" data-i18n="about.body">Flemish maker and founder, based in Zulte. I build what I wish existed, and I don’t stop at one layer. Firmware, apps, web, and the enclosure it ships in. Howest MCT, class of June 2026, double minor in <em>AI Engineering</em> and <em>XR Development</em>. Exchange semester in Portsmouth. Internship at Granstudio, Turin. Every build is documented in public on <em>The Bryce Byte</em>, from solder smoke to source code.</p>
+      <div class="side">
+        <div class="avatar"><img src="assets/images/pfp.jpg" alt="Jan Blomme" width="96" height="96" loading="lazy"></div>
+        <div class="facts">
+          <div><span class="k" data-i18n="f.loc">BASED IN</span><span class="v">ZULTE, BE</span></div>
+          <div><span class="k" data-i18n="f.edu">EDUCATION</span><span class="v"><a href="https://www.howest.be/" target="_blank" rel="noopener">HOWEST MCT ’26</a></span></div>
+          <div><span class="k" data-i18n="f.min">MINORS</span><span class="v">AI ENG · XR DEV</span></div>
+          <div><span class="k" data-i18n="f.co">COMPANY</span><span class="v"><a href="https://itsbryce.com" target="_blank" rel="noopener">ITSBRYCE</a></span></div>
+          <div><span class="k">YOUTUBE</span><span class="v"><a href="https://www.youtube.com/@TheBryceByte" target="_blank" rel="noopener">THE BRYCE BYTE</a></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="ey.work">selected work</div>
+
+    <div class="feat">
+      <div>
+        <h3>Starkpad</h3>
+        <div class="meta">ARDUINO UNO Q · YOCTO LINUX · LVGL · SHIDP · XIAO RP2040 · TINYUSB</div>
+        <p data-i18n="sp.desc">A Linux-powered touchscreen macro deck. Arduino UNO Q — Qualcomm Dragonwing QRB2210 with an STM32U585 bridge — running Yocto Linux, UI in LVGL, talking to the host over SHIDP, a custom serial HID protocol, through a XIAO RP2040 dongle on TinyUSB. A 60-button grid, virtual keyboard, precision touchpad, web-based configuration.</p>
+        <div class="press" data-i18n="sp.press">Featured by <a href="https://blog.arduino.cc/2026/02/01/this-stream-deck-alternative-runs-on-an-arduino-uno-q/" target="_blank" rel="noopener"><b>Arduino</b></a>, <a href="https://www.hackster.io/news/starkpad-is-a-gorgeous-stream-deck-alternative-you-can-build-yourself-76cfc961c5f0" target="_blank" rel="noopener"><b>Hackster.io</b></a> and <a href="https://www.linkedin.com/posts/lvglgui_lvgl-ui-embedded-activity-7427329212585328641-je0Q" target="_blank" rel="noopener"><b>LVGL</b></a>.<br>Defended as bachelor thesis — June 8, 2026.</div>
+        <div class="flinks">
+          <a href="https://github.com/BlommeJan/Starkpad" target="_blank" rel="noopener">github.com/BlommeJan/Starkpad →</a>
+          <a href="https://www.youtube.com/watch?v=fDFRH98BEmM" target="_blank" rel="noopener">watch the build →</a>
+          <a href="assets/papers/Blomme_Jan_BP_final_NL.pdf" target="_blank" rel="noopener">thesis (PDF) →</a>
+          <a href="https://www.linkedin.com/posts/howest-mct_techconnect-trotsoponzestudenten-networking-ugcPost-7475917898763452417-U0qo" target="_blank" rel="noopener">Howest TechConnect →</a>
+        </div>
+      </div>
+      <figure class="device">
+        <img src="assets/images/projects/starkpad.jpg" alt="Starkpad touchscreen macro deck" loading="lazy">
+        <figcaption>STARKPAD — 60-KEY GRID · TOUCHPAD · 7″ TOUCH</figcaption>
+      </figure>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-img"><img src="assets/images/projects/manim-motion.jpg" alt="Manim Motion Editor interface" loading="lazy"></div>
+        <div class="exp" role="button" tabindex="0" aria-expanded="false">
+          <div class="meta"><span class="yr">2026</span><span>VUE 2.7 · KONVA.JS · MANIM · DOCKER</span></div>
+          <h4>Manim Motion Editor</h4>
+          <p data-i18n="p.manim">A Figma-like visual animation editor powered by Manim. Drag shapes, write LaTeX, render MP4.</p>
+          <span class="plus" aria-hidden="true">+</span>
+          <div class="more"><div>
+            <p data-i18n="p.manim.m">Dual modes: a drag-and-drop canvas — 16 shape types, LaTeX math, a multi-track timeline, morphing with 17 easing functions — or raw Manim Python with full library access. Vue 2.7 + Konva.js front-end, Node/Express API, Redis render queue, Manim worker — all in Docker, rendering MP4 from 480p to 4K. MIT-licensed.</p>
+            <div class="mlinks">
+              <a href="https://github.com/BlommeJan/Manim-Motion" target="_blank" rel="noopener">github/Manim-Motion →</a>
+              <a href="https://manimmotion.netlify.app" target="_blank" rel="noopener">manimmotion.netlify.app →</a>
+              <a href="https://www.youtube.com/watch?v=U1CddE5jzL0" target="_blank" rel="noopener">watch the build →</a>
+            </div>
+          </div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img"><img src="assets/images/projects/orbitalplay.jpg" alt="OrbitalPlay XR hardware controller" loading="lazy"></div>
+        <div class="exp" role="button" tabindex="0" aria-expanded="false">
+          <div class="meta"><span class="yr">2025</span><span>XIAO RP2040 · C++ · OPEN SOURCE</span></div>
+          <h4>OrbitalPlay Controller</h4>
+          <p data-i18n="p.orbital">An open-source XR hardware controller. Firmware up.</p>
+          <span class="plus" aria-hidden="true">+</span>
+          <div class="more"><div>
+            <p data-i18n="p.orbital.m">Custom C++ firmware on a Seeed XIAO RP2040. Open hardware, open firmware — built to make XR input hackable.</p>
+            <span class="pending">repo — coming soon</span>
+          </div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img"><img src="assets/images/projects/cocktailshaker.jpg" alt="Smart Cocktail Shaker" loading="lazy"></div>
+        <div class="exp" role="button" tabindex="0" aria-expanded="false">
+          <div class="meta"><span class="yr">2023</span><span>RASPBERRY PI 4 · PYTHON · IOT</span></div>
+          <h4>Smart Cocktail Shaker</h4>
+          <p data-i18n="p.shaker">An IoT cocktail shaker. Yes, really.</p>
+          <span class="plus" aria-hidden="true">+</span>
+          <div class="more"><div>
+            <p data-i18n="p.shaker.m">Raspberry Pi 4 + Python: sensor-driven mixing, connected control. An exercise in putting compute where it doesn’t belong — deliberately.</p>
+            <span class="pending">repo — being published</span>
+          </div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img"><img src="assets/images/projects/nmbs-powerapp.jpg" alt="NMBS PowerApp interface" loading="lazy"></div>
+        <div class="exp" role="button" tabindex="0" aria-expanded="false">
+          <div class="meta"><span class="yr">2022</span><span>MICROSOFT POWERAPPS · HACKATHON</span></div>
+          <h4>NMBS PowerApp</h4>
+          <p data-i18n="p.nmbs">Runner-up. Built for Belgian Railways in one sprint.</p>
+          <span class="plus" aria-hidden="true">+</span>
+          <div class="more"><div>
+            <p data-i18n="p.nmbs.m">A rapid-build internal app on the Power Platform. Proof that shipping something usable in a day beats polishing something imaginary.</p>
+          </div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-img"><img src="assets/images/projects/orderpoint-website.jpg" alt="OrderPoint marketing site" loading="lazy"></div>
+        <div class="exp" role="button" tabindex="0" aria-expanded="false">
+          <div class="meta"><span class="yr">2026</span><span>HTML/CSS/JS · WEBGL · ITSBRYCE</span></div>
+          <h4>OrderPoint</h4>
+          <p data-i18n="p.op">Marketing site for a horeca-automation company. One HTML file.</p>
+          <span class="plus" aria-hidden="true">+</span>
+          <div class="more"><div>
+            <p data-i18n="p.op.m">One self-contained HTML file: a WebGL shader background, a filterable catalog — 48 products, 14 categories — and a quote wizard. Dark premium aesthetic to the JB-Signs brand brief. Shipped through itsBryce.</p>
+            <span class="pending">live site — launching soon</span>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="nda">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="ey.nda">client work — names withheld</div>
+    <div class="nda-head">
+      <p class="nda-note" data-i18n="nda.note">Built during an internship at Granstudio, Turin — an automotive &amp; mobility design studio founded by Lowie Vermeersch. Clients and project names stay off the record. The stacks don’t.</p>
+      <figure class="nda-figure">
+        <img src="assets/images/projects/granstudio.jpg" alt="Granstudio studio, Turin" loading="lazy">
+      </figure>
+    </div>
+    <div class="row">
+      <div class="k">AI PIPELINE</div>
+      <div>
+        <h4 data-i18n="nda1.t">Translation &amp; transcription platform</h4>
+        <p data-i18n="nda1.d">Containerized AI pipeline: Whisper transcription, local LLM translation, self-hosted auth. Thirteen containers. Later: SRT/WebVTT export, bilingual stacked subtitles, a subtitle burn-in rendering pipeline.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="k">DATA PLATFORM</div>
+      <div>
+        <h4 data-i18n="nda2.t">Analytics &amp; reporting platform</h4>
+        <p data-i18n="nda2.d">AI-assisted reporting for non-technical stakeholders: chat interface, chart builder, automated report exports. An MCP server wired to a local LLM.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="k">INSTALLATION</div>
+      <div>
+        <h4 data-i18n="nda3.t">Event installation system</h4>
+        <p data-i18n="nda3.d">Raspberry Pi server, kiosk-mode display under systemd, offline data buffering, real-time Unreal Engine front-end.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="ey.xp">experience</div>
+    <div class="xp">
+      <div class="date">NOW</div>
+      <div class="exp" role="button" tabindex="0" aria-expanded="false">
+        <h4 data-i18n="x1.t">Founder &amp; CEO <span class="org">— <a href="https://itsbryce.com" target="_blank" rel="noopener">itsBryce</a></span></h4>
+        <p data-i18n="x1.d">Full-stack from PCB to cloud, single-partner model: hardware, software, AI, XR, design, systems integration.</p>
+        <span class="plus" aria-hidden="true">+</span>
+        <div class="more"><div>
+          <p data-i18n="x1.m">Services: hardware engineering, software development, AI &amp; computer vision, XR &amp; interaction, design &amp; UX, systems integration, data &amp; analytics, R&amp;D. Notable: the full <a href="https://jbsigns.be" target="_blank" rel="noopener">JB-Signs</a> rebrand and website, the OrderPoint marketing site.</p>
+        </div></div>
+      </div>
+    </div>
+    <div class="xp">
+      <div class="date">2026</div>
+      <div class="exp" role="button" tabindex="0" aria-expanded="false">
+        <h4 data-i18n="x2.t">Intern <span class="org">— <a href="https://www.granstudio.com/" target="_blank" rel="noopener">Granstudio, Turin</a></span></h4>
+        <p data-i18n="x2.d">Full-stack tooling and AI integration for an automotive design studio.</p>
+        <span class="plus" aria-hidden="true">+</span>
+        <div class="more"><div>
+          <p data-i18n="x2.m">Three internal systems, detailed under client work above: a 13-container AI translation pipeline, an MCP-driven analytics &amp; reporting platform, and a Raspberry Pi + Unreal Engine event installation.</p>
+          <div class="mlinks">
+            <a href="https://www.linkedin.com/posts/jan-blomme_14-weeks-ago-i-landed-in-turin-as-an-intern-activity-7469745292956045313-3ltm" target="_blank" rel="noopener">read the reflection →</a>
+          </div>
+        </div></div>
+      </div>
+    </div>
+    <div class="xp">
+      <div class="date">2021 —</div>
+      <div>
+        <h4 data-i18n="x3.t">Bartender &amp; IT Support <span class="org">— <a href="https://www.detreffer.be/" target="_blank" rel="noopener">De Treffer Bar</a></span></h4>
+        <p data-i18n="x3.d">Pours and patches.</p>
+      </div>
+    </div>
+    <div class="xp">
+      <div class="date">2017 —</div>
+      <div>
+        <h4 data-i18n="x4.t">Technical Partner <span class="org">— <a href="https://jbsigns.be" target="_blank" rel="noopener">JB-Signs</a></span></h4>
+        <p data-i18n="x4.d">Smart tech in signage and production workflows.</p>
+      </div>
+    </div>
+
+    <div class="subhead" data-i18n="ey.edu">education</div>
+    <div class="xp">
+      <div class="date">2026</div>
+      <div class="exp" role="button" tabindex="0" aria-expanded="false">
+        <h4><a href="https://www.howest.be/" target="_blank" rel="noopener">Howest</a> <span class="org">— MCT, Multimedia &amp; Creative Technologies</span></h4>
+        <p data-i18n="e1.d">Double minor: AI Engineering &amp; XR Development. Thesis: Starkpad.</p>
+        <span class="plus" aria-hidden="true">+</span>
+        <div class="more"><div>
+          <p data-i18n="e1.m">Starkpad: defended June 8, 2026, selected for the school expo, featured by Arduino and LVGL. Minor tracks: AI Engineering (ML, computer vision) and XR Development (Unity, Android XR, WebXR).</p>
+          <div class="mlinks">
+            <a href="assets/papers/Blomme_Jan_BP_final_NL.pdf" target="_blank" rel="noopener">thesis (PDF) →</a>
+            <a href="https://www.linkedin.com/posts/howest-mct_techconnect-trotsoponzestudenten-networking-ugcPost-7475917898763452417-U0qo" target="_blank" rel="noopener">Howest TechConnect →</a>
+          </div>
+        </div></div>
+      </div>
+    </div>
+    <div class="xp">
+      <div class="date">2025</div>
+      <div>
+        <h4 data-i18n="e2.t"><a href="https://www.port.ac.uk/" target="_blank" rel="noopener">University of Portsmouth</a> <span class="org">— exchange semester</span></h4>
+        <p data-i18n="e2.d">Faculty of Creative and Cultural Industries.</p>
+      </div>
+    </div>
+
+    <div class="subhead" data-i18n="ey.vol">volunteering</div>
+    <div class="xp">
+      <div class="date">2019 — 2026</div>
+      <div>
+        <h4 data-i18n="v1.t">Social media manager &amp; content creator <span class="org">— @weekmenuhhc</span></h4>
+        <p data-i18n="v1.d">Ran the school’s menu account for seven years. 1,182 followers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="ey.skills">skills</div>
+    <div class="skills">
+      <div>
+        <h4>EMBEDDED</h4>
+        <p>Arduino / ESP32 <span>·</span> Raspberry Pi <span>·</span> XIAO RP2040 <span>·</span> TinyUSB <span>·</span> LVGL <span>·</span> Yocto Linux <span>·</span> custom protocols (SHIDP)</p>
+      </div>
+      <div>
+        <h4 data-i18n="sk.lang">LANGUAGES</h4>
+        <p>Python <span>·</span> C++ <span>·</span> C# <span>·</span> Java <span>·</span> JavaScript <span>·</span> Dart <span>·</span> Lua <span>·</span> Bash / PowerShell</p>
+      </div>
+      <div>
+        <h4>WEB &amp; APP</h4>
+        <p>Flutter <span>·</span> Kotlin <span>·</span> Vue 3 <span>·</span> FastAPI <span>·</span> Three.js <span>·</span> WebGL / shaders <span>·</span> Manifest V3 extensions</p>
+      </div>
+      <div>
+        <h4>DATA &amp; INFRA</h4>
+        <p>Docker <span>·</span> Supabase <span>·</span> Firebase <span>·</span> PostgreSQL <span>·</span> SQLite / Drift <span>·</span> Linux <span>·</span> Git</p>
+      </div>
+      <div>
+        <h4>AI · ML · XR</h4>
+        <p>TensorFlow <span>·</span> scikit-learn <span>·</span> OpenCV <span>·</span> MediaPipe <span>·</span> local LLM pipelines <span>·</span> Unity <span>·</span> Unreal <span>·</span> Android XR <span>·</span> WebXR</p>
+      </div>
+      <div>
+        <h4 data-i18n="sk.spoken">SPOKEN</h4>
+        <div class="langs">
+          <div><span data-i18n="l.nl">Dutch</span><span class="lv"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></span><span class="lb" data-i18n="l.native">NATIVE</span></div>
+          <div><span data-i18n="l.en">English</span><span class="lv"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></span><span class="lb" data-i18n="l.native2">NATIVE</span></div>
+          <div><span data-i18n="l.fr">French</span><span class="lv"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i></span><span class="lb" data-i18n="l.good">GOOD</span></div>
+          <div><span data-i18n="l.de">German</span><span class="lv"><i class="f"></i><i class="f"></i><i></i><i></i><i></i></span><span class="lb" data-i18n="l.basic">BASIC</span></div>
+          <div><span data-i18n="l.it">Italian</span><span class="lv"><i class="f"></i><i></i><i></i><i></i><i></i></span><span class="lb" data-i18n="l.basic2">BASIC</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="ey.contact">contact</div>
+    <p class="say" data-i18n="c.say">No form. Email works.</p>
+    <a class="email" href="mailto:jan@itsbryce.com">jan@itsbryce.com</a>
+    <div class="links">
+      <a href="https://github.com/BlommeJan" target="_blank" rel="noopener"><b>&gt;</b>github/BlommeJan</a>
+      <a href="https://www.linkedin.com/in/jan-blomme/" target="_blank" rel="noopener"><b>&gt;</b>linkedin/jan-blomme</a>
+      <a href="https://www.youtube.com/@TheBryceByte" target="_blank" rel="noopener"><b>&gt;</b>youtube/TheBryceByte</a>
+      <a href="https://itsbryce.com" target="_blank" rel="noopener"><b>&gt;</b>itsbryce.com</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap" data-i18n="footer">© 2026 Jan Blomme · Zulte, Belgium · no framework, built by hand.</div>
+</footer>
+
+<script src="app.js" defer></script>
+
 </body>
-</html> 
+</html>

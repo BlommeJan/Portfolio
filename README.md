@@ -1,84 +1,74 @@
-# Jan Blomme Portfolio
+# Jan Blomme — Portfolio
 
-A modern, accessible, and responsive personal portfolio website showcasing my skills, projects, and experience as an AI Engineer and XR Developer.
+Static portfolio site: **index.html**, **styles.css**, **app.js**. No build step, no framework.
 
-![Portfolio Preview](./static/PortfolioPreview.png)
+**Version:** 1.1.0
 
-## 🚀 Features
+## Run locally
 
-- **Modern Design**: Clean, professional interface with smooth animations
-- **Fully Responsive**: Optimized for all devices from mobile to desktop
-- **Accessibility-First**: ARIA attributes, keyboard navigation, and screen reader support
-- **Performance Optimized**: Minimal dependencies, optimized assets, and smooth transitions
-- **Section-Based Navigation**: Easy navigation between about, experience, skills, projects, and education
-- **Interactive Elements**: Expandable skill cards, project highlights, and social links
+```bash
+npx serve .
+# or
+python -m http.server 8080
+```
 
-## 💻 Technologies Used
+Open `http://localhost:8080` (or the port shown).
 
-- **HTML5**: Semantic markup for better accessibility and SEO
-- **CSS3**: Custom styling with responsive design principles
-- **JavaScript**: Vanilla JS for interactions and animations
-- **Font Awesome**: Icon library for visual elements
-- **Google Fonts**: Typography with Inter and JetBrains Mono
+## Deploy
 
-## 📋 Sections
+### GitHub Pages
 
-- **About**: Professional background, core strengths, and personal information
-- **Experience**: Work history and professional achievements
-- **Skills**: Comprehensive breakdown of technical skills across multiple domains
-- **Projects**: Showcase of key projects with descriptions and technologies used
-- **Education**: Academic background and qualifications
+1. Push this folder to a repo.
+2. **Settings → Pages → Build and deployment → Source:** Deploy from a branch.
+3. Branch: `main`, folder: `/` (root).
+4. Site URL: `https://<user>.github.io/<repo>/`
 
-## 🛠️ Setup and Deployment
+### Netlify
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/BlommeJan/portfolio.git
-   cd portfolio
-   ```
+Drag-and-drop the folder at [app.netlify.com/drop](https://app.netlify.com/drop), or connect the repo. `netlify.toml` is included.
 
-2. **Local Development**
-   - Open `index.html` in your browser
-   - Or use a local server:
-     ```bash
-     # Using Python
-     python -m http.server
-     
-     # Using Node.js
-     npx serve
-     ```
+### Vercel
 
-3. **Deployment**
-   - Deploy to GitHub Pages, Netlify, Vercel, or any static hosting service
-   - All assets are included in the repository, no build step required
+```bash
+npx vercel
+```
 
-## 📱 Mobile Support
+No build command — deploy the project root as static files.
 
-The portfolio is fully responsive with:
-- Mobile-first navigation with hamburger menu
-- Touch-friendly interface elements
-- Optimized layouts for all screen sizes
+## Structure
 
-## ♿ Accessibility
+| Path | Role |
+|------|------|
+| `index.html` | Markup, meta, font links |
+| `styles.css` | Layout and theme |
+| `app.js` | i18n, scroll hero, canvas animation |
+| `assets/fonts/` | Local IBM Plex font files (optional backup) |
+| `assets/images/` | Optimized JPGs used by the live site (avatar, project thumbnails, og-image) |
+| `assets/images/originals/` | Full-res source images, git-ignored — not deployed |
+| `assets/papers/` | Thesis PDF and other documents linked from the site |
+| `CONTENT.md` | Fill-in sheet for links, copy, images — sync to site when ready |
 
-- ARIA attributes for screen readers
-- Keyboard navigation support
-- Skip to content link
-- Semantic HTML structure
-- Sufficient color contrast
-- Focus indicators for keyboard users
+**Live fonts:** loaded from [Google Fonts](https://fonts.google.com/) in `index.html`. The files in `assets/fonts/` are not used by the site right now — safe to keep as a self-hosted backup, or delete if you prefer a smaller repo.
 
-## 🔮 Future Enhancements
+**Images:** drop full-res files anywhere, track them in `CONTENT.md`, then ask to sync — new images get resized/compressed with `ffmpeg` into `assets/images/` before being wired into `index.html`.
 
-- Dark/Light theme toggle
-- Project detail modals or pages
-- Blog integration
-- Contact form functionality
-- Performance metrics dashboard
+## Changelog
 
+### 1.1.0
+- Synced `CONTENT.md` into the live site: press links, thesis PDF, video links, org links (itsBryce, Granstudio, JB-Signs, De Treffer Bar, Howest, Portsmouth) now point to real URLs
+- Optimized and wired in all 9 project/profile images (avatar, Starkpad photo, 5 card thumbnails, Granstudio figure, og-image) — originals were ~24MB total, optimized JPGs are ~650KB combined
+- Added Open Graph / Twitter card meta tags using the new `og-image.jpg`
+- Fixed NMBS PowerApp year (2024 → 2022)
+- Added honest "coming soon" / "being published" notes for OrbitalPlay repo, Cocktail Shaker repo, and OrderPoint live site instead of dead links
 
-## 📬 Contact
+### 1.0.2
+- Added `CONTENT.md` — master fill-in sheet for all portfolio links, copy, and media
 
-- Email: [jan@itsbryce.com](mailto:jan@itsbryce.com)
-- GitHub: [BlommeJan](https://github.com/BlommeJan)
-- LinkedIn: [Jan Blomme](https://www.linkedin.com/in/jan-blomme-17b0bb258/)
+### 1.0.1
+- Removed build artifacts (original bundle, unpack/split scripts)
+- Organized `assets/fonts/` and added `assets/images/` for media
+
+### 1.0.0
+- Split single-file bundle into `index.html`, `styles.css`, and `app.js`
+- Added Netlify deployment config
+- Replaced embedded font binaries with Google Fonts CDN
